@@ -1,0 +1,34 @@
+{{ define "main" }}
+<section class="hero-section">
+    <div class="hero-content">
+        <div class="container">
+            <div class="club-values">
+                Mangfold - Glede - Forbilder
+            </div>
+        </div>
+    </div>
+
+    <div class="hero-carousel">
+        <div class="carousel-slide active" style="background-image: url('/images/carousel/464878130_9185945281420352_1213725695298816902_n.jpg')"></div>
+        <div class="carousel-slide" style="background-image: url('/images/carousel/DSC00493.jpg')"></div>
+        <div class="carousel-slide" style="background-image: url('/images/carousel/Fra-kampen-3-bannerformat-1280x500.jpg')"></div>
+        <div class="carousel-slide" style="background-image: url('/images/carousel/IMG_3684.JPG')"></div>
+        <div class="carousel-slide" style="background-image: url('/images/carousel/IMG_7804-1280x500.jpg')"></div>
+        <div class="carousel-slide" style="background-image: url('/images/carousel/Mange-langs-sidelinja-bannerformat-1280x500.jpg')"></div>
+    </div>
+</section>
+
+<div class="cta-section">
+    <div class="container">
+        <a href="/innmelding" class="cta-button">MELD DEG INN</a>
+    </div>
+</div>
+
+{{ if .Content }}
+<div class="content-section">
+    <div class="container">
+        {{ .Content }}
+    </div>
+</div>
+{{ end }}
+{{ end }}

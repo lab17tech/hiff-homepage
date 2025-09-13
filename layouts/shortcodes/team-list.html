@@ -1,0 +1,54 @@
+<div class="team-list">
+{{ range .Site.Params.teams }}
+  <div class="team-card">
+    <div class="team-header">
+      <h3>{{ .name }}</h3>
+      <p class="team-description">{{ .description }}</p>
+    </div>
+
+    <div class="team-details">
+      <div class="team-contact">
+        {{ if and .lagleder .lagleder.name }}
+        <div class="lagleder">
+          <h4>Lagleder</h4>
+          <p><strong>{{ .lagleder.name }}</strong></p>
+          {{ if .lagleder.email }}<p><a href="mailto:{{ .lagleder.email }}">{{ .lagleder.email }}</a></p>{{ end }}
+          {{ if .lagleder.phone }}<p><a href="tel:{{ .lagleder.phone }}">{{ .lagleder.phone }}</a></p>{{ end }}
+        </div>
+        {{ end }}
+
+        {{ if .trenere }}
+        <div class="trenere">
+          <h4>Trener{{ if gt (len .trenere) 1 }}e{{ end }}</h4>
+          {{ range .trenere }}
+          <div class="trener">
+            <p><strong>{{ .name }}</strong></p>
+            {{ if .email }}<p><a href="mailto:{{ .email }}">{{ .email }}</a></p>{{ end }}
+            {{ if .phone }}<p><a href="tel:{{ .phone }}">{{ .phone }}</a></p>{{ end }}
+          </div>
+          {{ end }}
+        </div>
+        {{ end }}
+      </div>
+
+      <div class="team-schedule">
+        {{ if .treningstider }}
+        <h4>Treningstider</h4>
+        {{ range .treningstider }}
+        <div class="treningstid">
+          <p><strong>{{ .day }}:</strong> {{ .time }}</p>
+          {{ if .location }}<p class="location">{{ .location }}</p>{{ end }}
+        </div>
+        {{ end }}
+        {{ end }}
+
+        {{ if .icsCalendar }}
+        <div class="calendar-link">
+          <a href="{{ .icsCalendar }}" class="calendar-button">Last ned kampkalender</a>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+{{ end }}
+</div>

@@ -1,0 +1,18 @@
+<table>
+  <thead>
+    <tr>
+      <th>Kategori</th>
+      <th>Alder</th>
+      <th>Fotballavgift 2025</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{ range .Site.Params.fees.football -}}
+    <tr>
+      <td>{{ .category }}</td>
+      <td>{{ .ageRange }}</td>
+      <td>{{ .amount }} kr</td>
+    </tr>
+    {{ end -}}
+  </tbody>
+</table>

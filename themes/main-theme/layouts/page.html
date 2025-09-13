@@ -1,0 +1,12 @@
+{{ define "main" }}
+<div class="content-section">
+  <div class="container">
+    <article>
+      {{ if ne .Title "Banen" }}
+      <h1>{{ .Title }}</h1>
+      {{ end }}
+      {{ .Content }}
+    </article>
+  </div>
+</div>
+{{ end }}

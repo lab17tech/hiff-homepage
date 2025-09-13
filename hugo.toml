@@ -1,0 +1,640 @@
+baseURL = 'https://example.org/'
+languageCode = 'no-nb'
+title = 'Haugerud IF - Fotball'
+theme = 'main-theme'
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[params]
+  description = "Haugerud Idrettsforening - Fotballgruppa"
+  tagline = "Setter hele nærmiljøet i bevegelse"
+  established = 1970
+
+  # Fee structure for 2025
+  [params.fees]
+    membership = 350  # Medlemskontingent per year
+
+    [[params.fees.football]]
+      category = "Barnefotball"
+      ageRange = "5-9 år"
+      amount = 1800
+
+    [[params.fees.football]]
+      category = "Eldre barnefotball"
+      ageRange = "10-12 år"
+      amount = 1900
+
+    [[params.fees.football]]
+      category = "Ungdomsfotball"
+      ageRange = "13-17 år"
+      amount = 2200
+
+    [[params.fees.football]]
+      category = "Voksenfotball"
+      ageRange = "JR-lag og Seniorlag"
+      amount = 2500
+
+  # Team configurations - Real data from Haugerud IF website
+
+  # J2017
+  [[params.teams]]
+    name = "J2017"
+    description = ""
+    ageGroup = "Jenter 1. klasse (født 2017)"
+    gender = "Jenter"
+
+    [[params.teams.trenere]]
+      name = "Kieran Hill"
+      email = "HappyHillProjects@gmail.com"
+      phone = "45511160"
+
+    [[params.teams.trenere]]
+      name = "Gjevat Hulaj"
+      email = "xheki.13@hotmail.com"
+      phone = "93934838"
+
+    [[params.teams.treningstider]]
+      day = "Mandag"
+      time = "17:00-18:00"
+      location = "Haugerudbanen"
+
+  # G2017
+  [[params.teams]]
+    name = "G2017"
+    description = ""
+    ageGroup = "Gutter 1. klasse (født 2017)"
+    gender = "Gutter"
+
+    [[params.teams.trenere]]
+      name = "Ali Islekcerci"
+      email = "alcerci@gmail.com"
+      phone = "47358596"
+
+    [[params.teams.trenere]]
+      name = "Ahmed Nasir"
+      email = "ahmed-nasir@live.no"
+      phone = "45380786"
+
+    [[params.teams.trenere]]
+      name = "Palani Hemen Gafar"
+      email = "Hemenpalani2014@hotmail.com"
+      phone = "94026276"
+
+    [[params.teams.trenere]]
+      name = "Jawwad Ahmed Khan"
+      email = "Jawwadsk@gmail.com"
+      phone = "96741648"
+
+    [[params.teams.treningstider]]
+      day = "Fredag"
+      time = "17:00-18:30"
+      location = "Haugerudbanen"
+
+  # J2016/2015
+  [[params.teams]]
+    name = "J2016/2015"
+    description = ""
+    ageGroup = "Jenter født 2016/2015"
+    gender = "Jenter"
+
+    [[params.teams.trenere]]
+      name = "Mikael Fidjeland"
+      email = "mikael@mikifi.net"
+      phone = "92066167"
+
+    [[params.teams.trenere]]
+      name = "Maria Kristiansen"
+      email = ""
+      phone = "90985542"
+
+    [[params.teams.treningstider]]
+      day = "Mandag"
+      time = "17:30-18:30"
+      location = "Haugerudbanen"
+
+  # G2016
+  [[params.teams]]
+    name = "G2016"
+    description = ""
+    ageGroup = "Gutter født 2016"
+    gender = "Gutter"
+
+    [[params.teams.trenere]]
+      name = "Jakob Utgård"
+      email = "jakobu@jakobu.no"
+      phone = "91829259"
+
+    [[params.teams.trenere]]
+      name = "Jeton Troni"
+      email = "cigo77@gmail.com"
+      phone = "93890498"
+
+    [[params.teams.treningstider]]
+      day = "Torsdag"
+      time = "17:15-18:30"
+      location = "9er A"
+
+    [[params.teams.treningstider]]
+      day = "Lørdag"
+      time = "16:00-17:30"
+      location = "9er A"
+
+  # G2015
+  [[params.teams]]
+    name = "G2015"
+    description = ""
+    ageGroup = "Gutter født 2015"
+    gender = "Gutter"
+
+    [[params.teams.trenere]]
+      name = "Farrukh Ahmed"
+      email = ""
+      phone = "99509905"
+
+    [[params.teams.trenere]]
+      name = "Fuad Ahmed Nabi"
+      email = "fuad@live.no"
+      phone = "45808094"
+
+    [[params.teams.trenere]]
+      name = "Bjørn Serkved"
+      email = "b_serkved@hotmail.com"
+      phone = "96826864"
+
+    [[params.teams.trenere]]
+      name = "Elmi Gurbanov"
+      email = "elmigurbanov@hotmail.com"
+      phone = "92249252"
+
+    [[params.teams.trenere]]
+      name = "Evzal Amiti"
+      email = "evzal-amiti@hotmail.com"
+      phone = "45885160"
+
+    [[params.teams.treningstider]]
+      day = "Onsdag"
+      time = "17:00-18:30"
+      location = "9er A"
+
+    [[params.teams.treningstider]]
+      day = "Lørdag"
+      time = "12:00-13:30"
+      location = "9er B"
+
+  # G2014
+  [[params.teams]]
+    name = "G2014"
+    description = ""
+    ageGroup = "Gutter født 2014"
+    gender = "Gutter"
+
+    [[params.teams.trenere]]
+      name = "Ifzal Bhatti"
+      email = "ifzalbhatti@yahoo.com"
+      phone = "45781881"
+
+    [[params.teams.trenere]]
+      name = "Amara Ben Slimen"
+      email = "amara.benslimen@gmail.com"
+      phone = "92879978"
+
+    [[params.teams.trenere]]
+      name = "Pål Aas"
+      email = "Paulonoruga@gmail.com"
+      phone = "98654066"
+
+    [[params.teams.trenere]]
+      name = "Thomas Eng"
+      email = "the.privat@yahoo.com"
+      phone = "48243659"
+
+    [[params.teams.trenere]]
+      name = "Ehsan Khalil Alzohbi"
+      email = "alzobiehsan4@gmail.com"
+      phone = "94072490"
+
+    [[params.teams.treningstider]]
+      day = "Onsdag"
+      time = "17:30"
+      location = "Haugerudbanen"
+
+  # J2013/2014
+  [[params.teams]]
+    name = "J2013/2014"
+    description = ""
+    ageGroup = "Jenter i 1. og 2. klasse (6-8 år)"
+    gender = "Jenter"
+
+    [[params.teams.trenere]]
+      name = "Isse Yusuf Ahmed"
+      email = "Cismaan12@hotmail.com"
+      phone = "98831451"
+
+    [[params.teams.trenere]]
+      name = "Blen Abraham"
+      email = "blenmimi@yahoo.com"
+      phone = "41299665"
+
+    [[params.teams.trenere]]
+      name = "Khader I. Adam"
+      email = "siemsiemeren@gmail.com"
+      phone = "41383224"
+
+    [[params.teams.treningstider]]
+      day = "Torsdag"
+      time = "16:00-17:00"
+      location = "Haugerudbanen"
+
+  # G2013
+  [[params.teams]]
+    name = "G2013"
+    description = ""
+    ageGroup = "Gutter født 2013"
+    gender = "Gutter"
+
+    [[params.teams.trenere]]
+      name = "Granit Dautaj"
+      email = "Granit@haugerudif.no"
+      phone = "97955755"
+
+    [[params.teams.trenere]]
+      name = "Mustafa Saad Hayd"
+      email = "Mhayd@live.no"
+      phone = "48436886"
+
+    [[params.teams.trenere]]
+      name = "Adriatik Krasniqi"
+      email = "tikikrasniqi@icloud.com"
+      phone = "91588231"
+
+    [[params.teams.trenere]]
+      name = "Kian Lea Heggernes"
+      email = "kialhegg@gmail.com"
+      phone = "40072992"
+
+    [[params.teams.trenere]]
+      name = "Ali Ahmed al-seimary"
+      email = "ali55alseimary@gmail.com"
+      phone = "46590510"
+
+    [[params.teams.trenere]]
+      name = "Daud Saqib"
+      email = "daud_07@icloud.com"
+      phone = "45843398"
+
+    [[params.teams.trenere]]
+      name = "Ryan Soleiman Ali Barrwry"
+      email = "ryanbarrwry@gmail.com"
+      phone = "40198399"
+
+    [[params.teams.treningstider]]
+      day = "Tirsdag"
+      time = "16:30-18:00"
+      location = "9er A"
+
+    [[params.teams.treningstider]]
+      day = "Torsdag"
+      time = "16:30-18:00"
+      location = "9er A"
+
+    [[params.teams.treningstider]]
+      day = "Søndag"
+      time = "13:00-14:30"
+      location = "9er A"
+
+  # G2012
+  [[params.teams]]
+    name = "G2012"
+    description = ""
+    ageGroup = "Gutter født 2012"
+    gender = "Gutter"
+
+    [[params.teams.trenere]]
+      name = "Roar Loraas"
+      email = "roarvl@hotmail.com"
+      phone = "99630411"
+
+    [[params.teams.trenere]]
+      name = "Pål Aas"
+      email = "Paulonoruga@gmail.com"
+      phone = "98654066"
+
+    [[params.teams.trenere]]
+      name = "Tor-Arne Pimentel-Eilertsen"
+      email = "torarne01@icloud.com"
+      phone = "90515469"
+
+    [[params.teams.trenere]]
+      name = "Abdilqerim Ibraimi"
+      email = "avdilcerimibraimi79@hotmail.com"
+      phone = "90900858"
+
+    [[params.teams.treningstider]]
+      day = "Tirsdag"
+      time = "17:45-19:00"
+      location = "Haugerudbanen"
+
+    [[params.teams.treningstider]]
+      day = "Torsdag"
+      time = "17:45-19:00"
+      location = "Haugerudbanen"
+
+  # J2011/2010
+  [[params.teams]]
+    name = "J2011/2010"
+    description = ""
+    ageGroup = "Jenter født 2011/2010"
+    gender = "Jenter"
+
+    [[params.teams.trenere]]
+      name = "Natalie Trinh"
+      email = "loan_ngoc_trinh@yahoo.com"
+      phone = "40390296"
+
+    [[params.teams.treningstider]]
+      day = "Tirsdag"
+      time = "16:00"
+      location = "Haugerudbanen"
+
+    [[params.teams.treningstider]]
+      day = "Torsdag"
+      time = "16:00"
+      location = "Haugerudbanen"
+
+  # G2010
+  [[params.teams]]
+    name = "G2010"
+    description = ""
+    ageGroup = "Gutter født 2010"
+    gender = "Gutter"
+
+    [[params.teams.trenere]]
+      name = "Granit Dautaj"
+      email = "Granit@haugerudif.no"
+      phone = "97955755"
+
+    [[params.teams.trenere]]
+      name = "Nathan Kidane"
+      email = "nathan789578@gmail.com"
+      phone = "96885766"
+
+    [[params.teams.trenere]]
+      name = "Youssef Idrissi"
+      email = "youssefidriss2006@gmail.com"
+      phone = "46300381"
+
+    [[params.teams.treningstider]]
+      day = "Mandag"
+      time = "17:30"
+      location = "Haugerud kunstgress"
+
+    [[params.teams.treningstider]]
+      day = "Onsdag"
+      time = "18:30"
+      location = "Haugerud kunstgress"
+
+    [[params.teams.treningstider]]
+      day = "Torsdag"
+      time = "19:00"
+      location = "Haugerud kunstgress"
+
+    [[params.teams.treningstider]]
+      day = "Søndag"
+      time = ""
+      location = "Haugerud kunstgress"
+
+  # G2009
+  [[params.teams]]
+    name = "G2009"
+    description = ""
+    ageGroup = "Gutter født 2009"
+
+    [[params.teams.trenere]]
+      name = "Hans Kristian Kvien"
+      email = "hanskk@uio.no"
+      phone = "400 94 039"
+
+    [[params.teams.treningstider]]
+      day = "Mandag"
+      time = "17:15"
+      location = "Haugerudbanen"
+
+    [[params.teams.treningstider]]
+      day = "Torsdag"
+      time = "17:15"
+      location = "Haugerudbanen"
+
+  # G2008
+  [[params.teams]]
+    name = "G2008"
+    description = ""
+    ageGroup = "Gutter født 2008"
+
+    [params.teams.lagleder]
+      name = "Antonio D'Ercole"
+      email = "toni@rbnet.no"
+      phone = "90792899"
+
+    [[params.teams.trenere]]
+      name = "Naeem Faruque"
+      email = "Naeem_faruque@hotmail.com"
+      phone = "98000999"
+
+    [[params.teams.trenere]]
+      name = "Mikael Devold"
+      email = "mikael2000@live.no"
+      phone = "98054722"
+
+    [[params.teams.trenere]]
+      name = "Shabir Sajedi"
+      email = "shabir.najafizada@gmail.com"
+      phone = "91743955"
+
+    [[params.teams.trenere]]
+      name = "Hong Sun"
+      email = "sunhong1212@hotmail.no"
+      phone = "95015288"
+
+    [[params.teams.trenere]]
+      name = "Ali Ismathi"
+      email = "alihamidi1972@hotmail.com"
+      phone = "48041973"
+
+    [[params.teams.trenere]]
+      name = "Bekim Gashi"
+      email = "bekim.oslo@hotmail.com"
+      phone = "97010958"
+
+    [[params.teams.treningstider]]
+      day = "Tirsdag"
+      time = "17:00-18:30"
+      location = "Haugerudbanen"
+
+    [[params.teams.treningstider]]
+      day = "Fredag"
+      time = "17:00-18:30"
+      location = "Haugerudbanen"
+
+  # J2007/2008
+  [[params.teams]]
+    name = "J2007/2008"
+    description = ""
+    ageGroup = "Jenter født 2007/2008"
+    gender = "Jenter"
+
+    [[params.teams.trenere]]
+      name = "Dilara Senel"
+      email = ""
+      phone = ""
+
+    [[params.teams.trenere]]
+      name = "Iman Essadiki"
+      email = ""
+      phone = ""
+
+    [[params.teams.treningstider]]
+      day = "Onsdag"
+      time = "17:00"
+      location = "Haugerudbanen"
+
+  # Menn 7er 1
+  [[params.teams]]
+    name = "Menn 7er 1"
+    description = ""
+    ageGroup = "Voksne menn"
+    gender = "Menn"
+
+    [[params.teams.trenere]]
+      name = "Waqas Sarwar"
+      email = "W.Sarwar@cmcmarkets.com"
+      phone = "46274646"
+
+    [[params.teams.trenere]]
+      name = "Asim Ahmad"
+      email = "asim.ahmad@dnb.no"
+      phone = "46489917"
+
+  # Menn 7er 2
+  [[params.teams]]
+    name = "Menn 7er 2"
+    description = ""
+    ageGroup = "Voksne menn"
+    gender = "Menn"
+
+    [[params.teams.trenere]]
+      name = "Markus Nyhoff Hagen"
+      email = "hagen.marko@gmail.com"
+      phone = "46878887"
+
+    [[params.teams.trenere]]
+      name = "Adriyan Thavanesan"
+      email = "Adriyanpriv@gmail.com"
+      phone = "41286594"
+
+  # Menn 7er 2000
+  [[params.teams]]
+    name = "Menn 7er 2000"
+    description = ""
+    ageGroup = "Voksne menn"
+    gender = "Menn"
+
+    [[params.teams.trenere]]
+      name = "Ali Yasin"
+      email = "ayasin849@gmail.com"
+      phone = "94822708"
+
+  # A-lag Senior
+  [[params.teams]]
+    name = "A-lag Senior"
+    description = ""
+    ageGroup = "Voksne menn"
+    gender = "Menn"
+
+    [[params.teams.trenere]]
+      name = "Alvaro Torres Arjona"
+      email = "alvarotorresarjona@gmail.com"
+      phone = "94345513"
+
+    [[params.teams.trenere]]
+      name = "Murtaza Ali"
+      email = "Temojin@live.no"
+      phone = "46432636"
+
+    [[params.teams.trenere]]
+      name = "Adil Svendsen Laatyaoui"
+      email = "Adilsvendsen@gmail.com"
+      phone = "40462540"
+
+  # B-lag senior
+  [[params.teams]]
+    name = "B-lag senior"
+    description = ""
+    ageGroup = "Voksne menn"
+    gender = "Menn"
+
+    [[params.teams.trenere]]
+      name = "Mikael Kråkenes"
+      email = "mikael.kraakenes@live.com"
+      phone = "94971492"
+
+    [[params.teams.trenere]]
+      name = "Firat Secici"
+      email = "firatsecici@gmail.com"
+      phone = "40604023"
+
+  # G2006
+  [[params.teams]]
+    name = "G2006"
+    description = ""
+    ageGroup = "Gutter født 2006"
+    gender = "Gutter"
+
+    [[params.teams.trenere]]
+      name = "Siem Kidane"
+      email = "siemsiemeren@gmail.com"
+      phone = "92504360"
+
+    [[params.teams.trenere]]
+      name = "Kirushaan Balachandran"
+      email = "Kirushaan26@gmail.com"
+      phone = "47628582"
+
+  # Futsal menn
+  [[params.teams]]
+    name = "Futsal menn"
+    description = ""
+    ageGroup = "Voksne menn"
+    gender = "Menn"
+
+    [[params.teams.trenere]]
+      name = "Mehdi Raza"
+      email = "Mehdi0712@outlook.com"
+      phone = "40089649"
+
+    [[params.teams.trenere]]
+      name = "Sarujan Subramaniam"
+      email = "Sarujan.subramaniam@outlook.com"
+      phone = "41271801"
+
+  # Gubbefotball
+  [[params.teams]]
+    name = "Gubbefotball"
+    description = "Tilbud for voksne som vil spille fotball. Fokus på moro og avslappet fotball. Ingen påmelding nødvendig."
+    ageGroup = "Voksne over 20 år"
+    gender = "Menn"
+
+    [[params.teams.treningstider]]
+      day = "Søndag"
+      time = "20:00"
+      location = "Haugerudbanen"
+
+[module]
+  [[module.mounts]]
+    source = "static"
+    target = "static"
+  [[module.mounts]]
+    source = "assets"
+    target = "assets"

@@ -1,0 +1,22 @@
+{
+  "name": "hiff-homepage",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently \"yarn vite\" \"hugo server --disableFastRender\"",
+    "build": "yarn vite build && hugo --minify",
+    "preview": "vite preview",
+    "hugo:build": "hugo --minify",
+    "hugo:server": "hugo server --disableFastRender",
+    "vite:dev": "vite",
+    "vite:build": "vite build"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-legacy": "^5.4.0",
+    "concurrently": "^8.2.2",
+    "sass": "^1.77.0",
+    "vite": "^5.3.0"
+  },
+  "packageManager": "yarn@4.5.3"
+}
