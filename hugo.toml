@@ -45,6 +45,7 @@ theme = 'main-theme'
     description = ""
     ageGroup = "Jenter 1. klasse (født 2017)"
     gender = "Jenter"
+    alder = "barn"
 
     [[params.teams.trenere]]
       name = "Kieran Hill"
@@ -67,6 +68,7 @@ theme = 'main-theme'
     description = ""
     ageGroup = "Gutter 1. klasse (født 2017)"
     gender = "Gutter"
+    alder = "barn"
 
     [[params.teams.trenere]]
       name = "Ali Islekcerci"
@@ -99,6 +101,7 @@ theme = 'main-theme'
     description = ""
     ageGroup = "Jenter født 2016/2015"
     gender = "Jenter"
+    alder = "barn"
 
     [[params.teams.trenere]]
       name = "Mikael Fidjeland"
@@ -121,6 +124,7 @@ theme = 'main-theme'
     description = ""
     ageGroup = "Gutter født 2016"
     gender = "Gutter"
+    alder = "barn"
 
     [[params.teams.trenere]]
       name = "Jakob Utgård"
@@ -148,6 +152,7 @@ theme = 'main-theme'
     description = ""
     ageGroup = "Gutter født 2015"
     gender = "Gutter"
+    alder = "barn"
 
     [[params.teams.trenere]]
       name = "Farrukh Ahmed"
@@ -190,6 +195,7 @@ theme = 'main-theme'
     description = ""
     ageGroup = "Gutter født 2014"
     gender = "Gutter"
+    alder = "barn"
 
     [[params.teams.trenere]]
       name = "Ifzal Bhatti"
@@ -227,6 +233,7 @@ theme = 'main-theme'
     description = ""
     ageGroup = "Jenter i 1. og 2. klasse (6-8 år)"
     gender = "Jenter"
+    alder = "barn"
 
     [[params.teams.trenere]]
       name = "Isse Yusuf Ahmed"
@@ -254,6 +261,7 @@ theme = 'main-theme'
     description = ""
     ageGroup = "Gutter født 2013"
     gender = "Gutter"
+    alder = "barn"
 
     [[params.teams.trenere]]
       name = "Granit Dautaj"
@@ -311,6 +319,7 @@ theme = 'main-theme'
     description = ""
     ageGroup = "Gutter født 2012"
     gender = "Gutter"
+    alder = "barn"
 
     [[params.teams.trenere]]
       name = "Roar Loraas"
@@ -348,6 +357,7 @@ theme = 'main-theme'
     description = ""
     ageGroup = "Jenter født 2011/2010"
     gender = "Jenter"
+    alder = "barn"
 
     [[params.teams.trenere]]
       name = "Natalie Trinh"
@@ -370,6 +380,7 @@ theme = 'main-theme'
     description = ""
     ageGroup = "Gutter født 2010"
     gender = "Gutter"
+    alder = "barn"
 
     [[params.teams.trenere]]
       name = "Granit Dautaj"
@@ -411,6 +422,8 @@ theme = 'main-theme'
     name = "G2009"
     description = ""
     ageGroup = "Gutter født 2009"
+    gender = "Gutter"
+    alder = "barn"
 
     [[params.teams.trenere]]
       name = "Hans Kristian Kvien"
@@ -432,6 +445,8 @@ theme = 'main-theme'
     name = "G2008"
     description = ""
     ageGroup = "Gutter født 2008"
+    gender = "Gutter"
+    alder = "ungdom og voksne"
 
     [params.teams.lagleder]
       name = "Antonio D'Ercole"
@@ -484,6 +499,7 @@ theme = 'main-theme'
     description = ""
     ageGroup = "Jenter født 2007/2008"
     gender = "Jenter"
+    alder = "ungdom og voksne"
 
     [[params.teams.trenere]]
       name = "Dilara Senel"
@@ -506,6 +522,7 @@ theme = 'main-theme'
     description = ""
     ageGroup = "Voksne menn"
     gender = "Menn"
+    alder = "ungdom og voksne"
 
     [[params.teams.trenere]]
       name = "Waqas Sarwar"
@@ -523,6 +540,7 @@ theme = 'main-theme'
     description = ""
     ageGroup = "Voksne menn"
     gender = "Menn"
+    alder = "ungdom og voksne"
 
     [[params.teams.trenere]]
       name = "Markus Nyhoff Hagen"
@@ -540,6 +558,7 @@ theme = 'main-theme'
     description = ""
     ageGroup = "Voksne menn"
     gender = "Menn"
+    alder = "ungdom og voksne"
 
     [[params.teams.trenere]]
       name = "Ali Yasin"
@@ -552,6 +571,7 @@ theme = 'main-theme'
     description = ""
     ageGroup = "Voksne menn"
     gender = "Menn"
+    alder = "ungdom og voksne"
 
     [[params.teams.trenere]]
       name = "Alvaro Torres Arjona"
@@ -574,6 +594,7 @@ theme = 'main-theme'
     description = ""
     ageGroup = "Voksne menn"
     gender = "Menn"
+    alder = "ungdom og voksne"
 
     [[params.teams.trenere]]
       name = "Mikael Kråkenes"
@@ -591,6 +612,7 @@ theme = 'main-theme'
     description = ""
     ageGroup = "Gutter født 2006"
     gender = "Gutter"
+    alder = "ungdom og voksne"
 
     [[params.teams.trenere]]
       name = "Siem Kidane"
@@ -608,6 +630,7 @@ theme = 'main-theme'
     description = ""
     ageGroup = "Voksne menn"
     gender = "Menn"
+    alder = "ungdom og voksne"
 
     [[params.teams.trenere]]
       name = "Mehdi Raza"
@@ -625,6 +648,7 @@ theme = 'main-theme'
     description = "Tilbud for voksne som vil spille fotball. Fokus på moro og avslappet fotball. Ingen påmelding nødvendig."
     ageGroup = "Voksne over 20 år"
     gender = "Menn"
+    alder = "ungdom og voksne"
 
     [[params.teams.treningstider]]
       day = "Søndag"

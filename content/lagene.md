@@ -1,5 +1,4 @@
 ---
-title: "Lagene"
 description: "Oversikt over alle lag i Haugerud IF Fotball"
 ---
 
