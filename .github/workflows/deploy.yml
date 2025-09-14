@@ -65,11 +65,10 @@ jobs:
 
       - name: Build with Hugo
         env:
-          HUGO_ENVIRONMENT: production
-          HUGO_ENV: production
+          HUGO_ENVIRONMENT: github
+          HUGO_ENV: github
         run: |
           hugo \
-            --baseURL "https://lab17tech.github.io/hiff-homepage/" \
             --gc \
             --minify
 
