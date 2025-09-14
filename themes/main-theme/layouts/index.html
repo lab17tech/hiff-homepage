@@ -9,19 +9,50 @@
     </div>
 
     <div class="hero-carousel">
-        {{- $img1 := resources.Get "images/carousel/464878130_9185945281420352_1213725695298816902_n.jpg" -}}
-        {{- $img2 := resources.Get "images/carousel/DSC00493.jpg" -}}
-        {{- $img3 := resources.Get "images/carousel/Fra-kampen-3-bannerformat-1280x500.jpg" -}}
-        {{- $img4 := resources.Get "images/carousel/IMG_3684.JPG" -}}
-        {{- $img5 := resources.Get "images/carousel/IMG_7804-1280x500.jpg" -}}
-        {{- $img6 := resources.Get "images/carousel/Mange-langs-sidelinja-bannerformat-1280x500.jpg" -}}
-        <div class="carousel-slide active" style="background-image: url('{{ $img1.RelPermalink }}')"></div>
-        <div class="carousel-slide" style="background-image: url('{{ $img2.RelPermalink }}')"></div>
-        <div class="carousel-slide" style="background-image: url('{{ $img3.RelPermalink }}')"></div>
-        <div class="carousel-slide" style="background-image: url('{{ $img4.RelPermalink }}')"></div>
-        <div class="carousel-slide" style="background-image: url('{{ $img5.RelPermalink }}')"></div>
-        <div class="carousel-slide" style="background-image: url('{{ $img6.RelPermalink }}')"></div>
+        {{- $images := slice "images/carousel/464878130_9185945281420352_1213725695298816902_n.jpg" "images/carousel/DSC00493.jpg" "images/carousel/Fra-kampen-3-bannerformat-1280x500.jpg" "images/carousel/IMG_3684.JPG" "images/carousel/IMG_7804-1280x500.jpg" "images/carousel/Mange-langs-sidelinja-bannerformat-1280x500.jpg" -}}
+        {{- range $index, $imagePath := $images -}}
+            {{- $image := resources.Get $imagePath -}}
+            {{- if $image -}}
+                <div class="carousel-slide {{ if eq $index 0 }}active{{ end }}"
+                     style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+                            background-image: url('{{ $image.RelPermalink }}');
+                            background-size: cover; background-position: center;
+                            opacity: {{ if eq $index 0 }}1{{ else }}0{{ end }};
+                            z-index: {{ if eq $index 0 }}2{{ else }}1{{ end }};
+                            transition: opacity 1s ease-in-out;">
+                </div>
+            {{- end -}}
+        {{- end -}}
     </div>
+
+    <!-- Carousel Script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const slides = document.querySelectorAll('.carousel-slide');
+        if (slides.length > 1) {
+          let currentSlide = 0;
+
+          function nextSlide() {
+            // Start next slide animation and bring it to front
+            const nextSlideIndex = (currentSlide + 1) % slides.length;
+            slides[nextSlideIndex].classList.add('active');
+            slides[nextSlideIndex].style.zIndex = '3';
+            slides[nextSlideIndex].style.opacity = '1';
+
+            // After transition, clean up previous slide
+            setTimeout(() => {
+              slides[currentSlide].classList.remove('active');
+              slides[currentSlide].style.opacity = '0';
+              slides[currentSlide].style.zIndex = '1';
+              currentSlide = nextSlideIndex;
+            }, 1000);
+          }
+
+          // Change slide every 4 seconds
+          setInterval(nextSlide, 4000);
+        }
+      });
+    </script>
 </section>
 
 <div class="cta-section">
