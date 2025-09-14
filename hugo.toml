@@ -1,4 +1,4 @@
-baseURL = 'https://example.org/'
+baseURL = '/'
 languageCode = 'no-nb'
 title = 'Haugerud IF - Fotball'
 theme = 'main-theme'
