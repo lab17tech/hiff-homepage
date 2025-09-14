@@ -7,21 +7,21 @@
     <meta name="description" content="{{ .Site.Params.description }}">
 
     <!-- Favicons -->
-    <link rel="icon" type="image/x-icon" href="{{ "favicon.ico" | relURL }}">
-    <link rel="icon" type="image/png" sizes="128x128" href="{{ "favicon-128x128.png" | relURL }}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ "favicon-32x32.png" | relURL }}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ "favicon-16x16.png" | relURL }}">
+    <link rel="icon" type="image/x-icon" href="{{ .Site.BaseURL }}favicon.ico">
+    <link rel="icon" type="image/png" sizes="128x128" href="{{ .Site.BaseURL }}favicon-128x128.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ .Site.BaseURL }}favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ .Site.BaseURL }}favicon-16x16.png">
 
     <!-- Custom Fonts -->
-    <link rel="stylesheet" href="{{ "css/fonts.css" | relURL }}">
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}css/fonts.css">
 
     {{ if hugo.IsServer }}
     <script type="module" src="http://localhost:3000/@vite/client"></script>
     <script type="module" src="http://localhost:3000/js/main.js"></script>
     <link rel="stylesheet" href="http://localhost:3000/scss/main.scss">
     {{ else }}
-    <link rel="stylesheet" href="{{ "dist/assets/styles-BIb9PnxO.css" | relURL }}">
-    <script type="module" src="{{ "dist/assets/main-B1rkipsU.js" | relURL }}"></script>
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}dist/assets/styles-BIb9PnxO.css">
+    <script type="module" src="{{ .Site.BaseURL }}dist/assets/main-B1rkipsU.js"></script>
     {{ end }}
 </head>
 <body>
@@ -29,8 +29,8 @@
         <div class="container">
             <div class="header-content">
                 <div class="header-brand">
-                    <a href="{{ "/" | relURL }}" class="brand-link">
-                        <img src="{{ "images/logo.png" | relURL }}" alt="{{ .Site.Title }} logo" class="logo">
+                    <a href="{{ .Site.BaseURL }}" class="brand-link">
+                        <img src="{{ .Site.BaseURL }}images/logo.png" alt="{{ .Site.Title }} logo" class="logo">
                         <div class="brand-text">
                             <h1>Haugerud IF</h1>
                             <h2>Fotball</h2>
@@ -42,8 +42,8 @@
                 </div>
                 <div class="header-menu">
                     <nav class="header-nav">
-                        <a href="{{ "/lagene" | relURL }}">Lagene</a>
-                        <a href="{{ "/banen" | relURL }}">Banen</a>
+                        <a href="{{ .Site.BaseURL }}lagene">Lagene</a>
+                        <a href="{{ .Site.BaseURL }}banen">Banen</a>
                     </nav>
                 </div>
             </div>
@@ -87,23 +87,23 @@
                 <div class="footer-section footer-right">
                     <div class="social-links">
                         <a href="https://haugerudif.no" target="_blank" rel="noopener" title="Haugerud IF hjemmeside">
-                            <img src="{{ "favicon-128x128.png" | relURL }}" alt="Haugerud IF" class="social-icon" style="width: 24px; height: 24px;">
+                            <img src="{{ .Site.BaseURL }}favicon-128x128.png" alt="Haugerud IF" class="social-icon" style="width: 24px; height: 24px;">
                             <span>haugerudif.no</span>
                         </a>
                         <a href="https://www.facebook.com/HaugerudFotball/" target="_blank" rel="noopener" title="Haugerud Fotball på Facebook">
-                            <img src="{{ "images/facebook-icon.svg" | relURL }}" alt="Facebook" class="social-icon">
+                            <img src="{{ .Site.BaseURL }}images/facebook-icon.svg" alt="Facebook" class="social-icon">
                             <span>Haugerud Fotball</span>
                         </a>
                         <a href="https://www.facebook.com/haugerudidrettsforening/" target="_blank" rel="noopener" title="Haugerud IF på Facebook">
-                            <img src="{{ "images/facebook-icon.svg" | relURL }}" alt="Facebook" class="social-icon">
+                            <img src="{{ .Site.BaseURL }}images/facebook-icon.svg" alt="Facebook" class="social-icon">
                             <span>Haugerud Idrettsforening</span>
                         </a>
                         <a href="https://www.instagram.com/haugerud_if/" target="_blank" rel="noopener" title="Haugerud IF på Instagram">
-                            <img src="{{ "images/instagram-icon.svg" | relURL }}" alt="Instagram" class="social-icon">
+                            <img src="{{ .Site.BaseURL }}images/instagram-icon.svg" alt="Instagram" class="social-icon">
                             <span>@haugerud_if</span>
                         </a>
                         <a href="https://twitter.com/HaugerudIF/" target="_blank" rel="noopener" title="Haugerud IF på Twitter/X">
-                            <img src="{{ "images/twitter-icon.svg" | relURL }}" alt="Twitter/X" class="social-icon">
+                            <img src="{{ .Site.BaseURL }}images/twitter-icon.svg" alt="Twitter/X" class="social-icon">
                             <span>@HaugerudIF</span>
                         </a>
                     </div>
