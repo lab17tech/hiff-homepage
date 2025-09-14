@@ -1,19 +1,61 @@
+<div class="team-filters">
+  <div class="filter-group">
+    <button class="filter-btn" data-filter="gender" data-value="Jenter">Jenter</button>
+    <button class="filter-btn" data-filter="gender" data-value="Gutter">Gutter</button>
+  </div>
+
+  <div class="filter-group">
+    <button class="filter-btn" data-filter="age" data-value="barn">Barn</button>
+    <button class="filter-btn" data-filter="age" data-value="ungdom og voksne">Ungdom og voksne</button>
+  </div>
+
+  <div class="filter-group">
+    <button class="filter-btn" data-filter="day" data-value="Mandag">Mandag</button>
+    <button class="filter-btn" data-filter="day" data-value="Tirsdag">Tirsdag</button>
+    <button class="filter-btn" data-filter="day" data-value="Onsdag">Onsdag</button>
+    <button class="filter-btn" data-filter="day" data-value="Torsdag">Torsdag</button>
+    <button class="filter-btn" data-filter="day" data-value="Fredag">Fredag</button>
+    <button class="filter-btn" data-filter="day" data-value="Lørdag">Lørdag</button>
+    <button class="filter-btn" data-filter="day" data-value="Søndag">Søndag</button>
+  </div>
+</div>
+
 <div class="team-list">
-{{ range .Site.Params.teams }}
-  <div class="team-card">
-    <div class="team-header">
-      <h3>{{ .name }}</h3>
-      <p class="team-description">{{ .description }}</p>
+{{ range sort .Site.Params.teams "year" "desc" }}
+  <div class="team-card accordion"
+       data-gender="{{ .gender | default "Menn" }}"
+       data-age="{{ .alder | default "ungdom og voksne" }}"
+       data-days="{{ range .treningstider }}{{ .day }} {{ end }}"
+       data-year="{{ .year }}">
+
+    <div class="team-header accordion-header">
+      <div class="team-title">
+        <h3>{{ .name }}</h3>
+        {{ if .treningstider }}
+        <div class="team-schedule-preview">
+          {{ range .treningstider }}
+          <span class="training-time">{{ .day }} {{ .time }}</span>
+          {{ end }}
+        </div>
+        {{ end }}
+      </div>
+      <div class="accordion-toggle">
+        <span class="toggle-icon">+</span>
+      </div>
     </div>
 
-    <div class="team-details">
+    <div class="team-details accordion-content">
       <div class="team-contact">
-        {{ if and .lagleder .lagleder.name }}
+        {{ if .lagleder }}
         <div class="lagleder">
-          <h4>Lagleder</h4>
-          <p><strong>{{ .lagleder.name }}</strong></p>
-          {{ if .lagleder.email }}<p><a href="mailto:{{ .lagleder.email }}">{{ .lagleder.email }}</a></p>{{ end }}
-          {{ if .lagleder.phone }}<p><a href="tel:{{ .lagleder.phone }}">{{ .lagleder.phone }}</a></p>{{ end }}
+          <h4>Lagleder{{ if gt (len .lagleder) 1 }}e{{ end }}</h4>
+          {{ range .lagleder }}
+          <div class="lagleder-person">
+            <p><strong>{{ .name }}</strong></p>
+            {{ if .email }}<p><a href="mailto:{{ .email }}">{{ .email }}</a></p>{{ end }}
+            {{ if .phone }}<p><a href="tel:{{ .phone }}">{{ .phone }}</a></p>{{ end }}
+          </div>
+          {{ end }}
         </div>
         {{ end }}
 
@@ -31,24 +73,305 @@
         {{ end }}
       </div>
 
-      <div class="team-schedule">
-        {{ if .treningstider }}
-        <h4>Treningstider</h4>
-        {{ range .treningstider }}
-        <div class="treningstid">
-          <p><strong>{{ .day }}:</strong> {{ .time }}</p>
-          {{ if .location }}<p class="location">{{ .location }}</p>{{ end }}
-        </div>
-        {{ end }}
-        {{ end }}
-
-        {{ if .icsCalendar }}
-        <div class="calendar-link">
-          <a href="{{ .icsCalendar }}" class="calendar-button">Last ned kampkalender</a>
-        </div>
-        {{ end }}
+      {{ if .icsCalendar }}
+      <div class="calendar-link">
+        <a href="{{ .icsCalendar }}" class="calendar-button">Last ned kampkalender</a>
       </div>
+      {{ end }}
     </div>
   </div>
 {{ end }}
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const teamCards = document.querySelectorAll('.team-card');
+
+  let activeFilters = {
+    gender: 'all',
+    age: 'all',
+    day: 'all'
+  };
+
+  function applyFilters() {
+    const teamList = document.querySelector('.team-list');
+    const visibleCards = [];
+
+    teamCards.forEach(card => {
+      let showCard = true;
+
+      // Gender filter
+      if (activeFilters.gender !== 'all') {
+        const cardGender = card.dataset.gender;
+        const cardAge = card.dataset.age;
+
+        if (activeFilters.gender === 'Gutter') {
+          // Show both Gutter teams and adult men teams (Menn)
+          if (cardGender !== 'Gutter' && cardGender !== 'Menn') {
+            showCard = false;
+          }
+        } else if (activeFilters.gender === 'Jenter') {
+          if (cardGender !== 'Jenter') {
+            showCard = false;
+          }
+        }
+      }
+
+      // Age filter
+      if (activeFilters.age !== 'all') {
+        const cardAge = card.dataset.age;
+        if (cardAge !== activeFilters.age) {
+          showCard = false;
+        }
+      }
+
+      // Day filter
+      if (activeFilters.day !== 'all') {
+        const cardDays = card.dataset.days || '';
+        if (!cardDays.includes(activeFilters.day)) {
+          showCard = false;
+        }
+      }
+
+      // Show or hide card
+      if (showCard) {
+        card.style.display = 'block';
+        card.style.animation = 'fadeIn 0.3s ease-in';
+        visibleCards.push(card);
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    // Sort visible cards by year (descending) and reorder in DOM
+    visibleCards.sort((a, b) => {
+      const yearA = parseInt(a.dataset.year) || 0;
+      const yearB = parseInt(b.dataset.year) || 0;
+      return yearB - yearA; // Descending order
+    });
+
+    // Reorder visible cards in the DOM to maintain year sorting
+    visibleCards.forEach(card => {
+      teamList.appendChild(card);
+    });
+  }
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      const filterType = this.dataset.filter;
+      const filterValue = this.dataset.value;
+
+      // Toggle behavior: if button is already active, deselect it
+      if (this.classList.contains('active')) {
+        this.classList.remove('active');
+        activeFilters[filterType] = 'all';
+      } else {
+        // Remove active class from siblings
+        const siblings = document.querySelectorAll(`[data-filter="${filterType}"]`);
+        siblings.forEach(sibling => sibling.classList.remove('active'));
+
+        // Add active class to clicked button
+        this.classList.add('active');
+
+        // Update active filters
+        activeFilters[filterType] = filterValue;
+      }
+
+      // Apply filters
+      applyFilters();
+    });
+  });
+
+  // Accordion functionality
+  const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+  accordionHeaders.forEach(header => {
+    header.addEventListener('click', function() {
+      const accordion = this.parentElement;
+      const content = accordion.querySelector('.accordion-content');
+      const toggleIcon = this.querySelector('.toggle-icon');
+
+      // Toggle the accordion
+      if (accordion.classList.contains('active')) {
+        accordion.classList.remove('active');
+        content.style.maxHeight = null;
+        toggleIcon.textContent = '+';
+      } else {
+        accordion.classList.add('active');
+        content.style.maxHeight = content.scrollHeight + "px";
+        toggleIcon.textContent = '−';
+      }
+    });
+  });
+});
+</script>
+
+<style>
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.team-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.filter-group {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.filter-btn {
+  background: #f8f9fa;
+  border: 2px solid #dee2e6;
+  color: #495057;
+  padding: 0.375rem 0.75rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.filter-btn:hover {
+  background: #e9ecef;
+  border-color: #adb5bd;
+}
+
+.filter-btn.active {
+  background: #495057;
+  border-color: #495057;
+  color: white;
+}
+
+.filter-btn.active:hover {
+  background: #343a40;
+  border-color: #343a40;
+}
+
+/* Accordion Styles */
+.team-card.accordion {
+  margin-bottom: 1rem;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  background: white;
+  overflow: hidden;
+}
+
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  background: #f8f9fa;
+  border-bottom: 1px solid transparent;
+  transition: background-color 0.2s ease;
+}
+
+.accordion-header:hover {
+  background: #e9ecef;
+}
+
+.team-card.accordion.active .accordion-header {
+  border-bottom-color: #dee2e6;
+  background: #e9ecef;
+}
+
+.team-title h3 {
+  margin: 0 0 0.5rem 0;
+  color: #2c5530;
+}
+
+/* Red color for Jenter teams */
+.team-card[data-gender="Jenter"] .team-title h3 {
+  color: #e52a32;
+}
+
+.team-schedule-preview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.training-time {
+  background: #263387;
+  color: white;
+  padding: 0.375rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  font-weight: bold;
+}
+
+/* Red background for Jenter teams training times */
+.team-card[data-gender="Jenter"] .training-time {
+  background: #e52a32;
+}
+
+.accordion-toggle {
+  flex-shrink: 0;
+  margin-left: 1rem;
+}
+
+.toggle-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: 2px solid #263387;
+  border-radius: 50%;
+  color: #263387;
+  font-size: 18px;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+.team-card.accordion.active .toggle-icon {
+  background: #263387;
+  color: white;
+  transform: rotate(180deg);
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background: white;
+}
+
+.team-card.accordion.active .accordion-content {
+  border-top: 1px solid #dee2e6;
+}
+
+.accordion-content .team-contact {
+  padding: 1.5rem;
+}
+
+.accordion-content .calendar-link {
+  padding: 0 1.5rem 1.5rem 1.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .accordion-header {
+    padding: 0.75rem 1rem;
+  }
+
+  .team-schedule-preview {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .accordion-content .team-contact,
+  .accordion-content .calendar-link {
+    padding: 1rem;
+  }
+}
+
+</style>

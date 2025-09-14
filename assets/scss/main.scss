@@ -1090,7 +1090,18 @@ footer {
   border-radius: 8px;
   padding: 1.5rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  border-left: 4px solid $secondary-color;
+  border-left: 4px solid $secondary-color; // Default red for girls
+
+  // Boys teams get blue border
+  &[data-gender="Gutter"],
+  &[data-gender="Menn"] {
+    border-left-color: $primary-color;
+  }
+
+  // Girls teams explicitly get red border
+  &[data-gender="Jenter"] {
+    border-left-color: $secondary-color;
+  }
 
   .team-header {
     border-bottom: 2px solid #f0f0f0;

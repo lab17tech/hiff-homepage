@@ -19,9 +19,11 @@ Seriekamper har alltid førsteprioritet til banen, og disse settes opp av Fotbal
 
 Følger man dette, blir banene plassert slik:
 
-<img src="/images/banen/Baneinndeling-med-nye-merker-719x495.jpg" alt="Baneinndeling med nye merker" style="width: 100%; max-width: 719px; height: auto;">
-
-<img src="/images/banen/Merkene-på-banen-fra-2016-719x495.jpg" alt="Merkene på banen fra 2016" style="width: 100%; max-width: 719px; height: auto;">
+{{< image-gallery
+    img1="/images/banen/Baneinndeling-med-nye-merker-719x495.jpg"
+    alt1="Baneinndeling med nye merker"
+    img2="/images/banen/Merkene-på-banen-fra-2016-719x495.jpg"
+    alt2="Merkene på banen fra 2016" >}}
 
 ## Regler for bruk av Haugerudbanen
 

@@ -1,0 +1,160 @@
+{{ $img1 := .Get "img1" }}
+{{ $alt1 := .Get "alt1" }}
+{{ $img2 := .Get "img2" }}
+{{ $alt2 := .Get "alt2" }}
+
+<div class="image-gallery">
+  <div class="gallery-row">
+    <div class="gallery-item">
+      <img src="{{ $img1 }}" alt="{{ $alt1 }}" class="gallery-image" data-full="{{ $img1 }}" />
+    </div>
+    <div class="gallery-item">
+      <img src="{{ $img2 }}" alt="{{ $alt2 }}" class="gallery-image" data-full="{{ $img2 }}" />
+    </div>
+  </div>
+</div>
+
+<!-- Modal for enlarged images -->
+<div id="imageModal" class="image-modal">
+  <span class="close-modal">&times;</span>
+  <img class="modal-content" id="modalImage">
+  <div id="modalCaption"></div>
+</div>
+
+<style>
+.image-gallery {
+  margin: 2rem 0;
+}
+
+.gallery-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.gallery-item {
+  flex: 1;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Modal styles */
+.image-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  padding-top: 50px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 80vh;
+  animation: zoom 0.3s;
+}
+
+@keyframes zoom {
+  from { transform: scale(0.5); }
+  to { transform: scale(1); }
+}
+
+#modalCaption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 50px;
+}
+
+.close-modal {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .gallery-row {
+    flex-direction: column;
+  }
+
+  .modal-content {
+    width: 95%;
+  }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var modal = document.getElementById('imageModal');
+  var modalImg = document.getElementById('modalImage');
+  var captionText = document.getElementById('modalCaption');
+  var closeBtn = document.getElementsByClassName('close-modal')[0];
+
+  // Add click handler to all gallery images
+  var galleryImages = document.querySelectorAll('.gallery-image');
+  galleryImages.forEach(function(img) {
+    img.onclick = function() {
+      modal.style.display = 'block';
+      modalImg.src = this.getAttribute('data-full');
+      captionText.innerHTML = this.alt;
+    }
+  });
+
+  // Close modal when clicking X
+  closeBtn.onclick = function() {
+    modal.style.display = 'none';
+  }
+
+  // Close modal when clicking outside the image
+  modal.onclick = function(event) {
+    if (event.target === modal) {
+      modal.style.display = 'none';
+    }
+  }
+
+  // Close modal with Escape key
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape' && modal.style.display === 'block') {
+      modal.style.display = 'none';
+    }
+  });
+});
+</script>
