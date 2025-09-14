@@ -60,6 +60,12 @@ jobs:
         id: pages
         uses: actions/configure-pages@v5
 
+      - name: Build Vite assets
+        run: yarn vite build
+
+      - name: Copy Vite manifest to assets
+        run: mkdir -p assets/dist/.vite && cp static/dist/.vite/manifest.json assets/dist/.vite/manifest.json
+
       - name: Build with Hugo
         env:
           HUGO_ENVIRONMENT: github

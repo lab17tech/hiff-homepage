@@ -4,16 +4,18 @@
 <script type="module" src="http://localhost:3000/js/main.js"></script>
 <link rel="stylesheet" href="http://localhost:3000/scss/main.scss">
 {{- else -}}
-<!-- Production mode - use Hugo's asset pipeline -->
-{{- $css := resources.Get "scss/main.scss" -}}
-{{- if $css -}}
-  {{- $css = $css | resources.ToCSS | minify | fingerprint -}}
-  <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
-{{- end -}}
-
-{{- $js := resources.Get "js/main.js" -}}
-{{- if $js -}}
-  {{- $js = $js | minify | fingerprint -}}
-  <script type="module" src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}"></script>
+<!-- Production mode - use pre-built Vite assets -->
+{{- $manifest := resources.Get "dist/.vite/manifest.json" | transform.Unmarshal -}}
+{{- if $manifest -}}
+  {{- with index $manifest "scss/main.scss" -}}
+    <link rel="stylesheet" href="{{ printf "%sdist/%s" $.Site.BaseURL .file }}">
+  {{- end -}}
+  {{- with index $manifest "js/main.js" -}}
+    <script type="module" src="{{ printf "%sdist/%s" $.Site.BaseURL .file }}"></script>
+  {{- end -}}
+{{- else -}}
+  <!-- Fallback to direct asset paths if manifest not found -->
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}dist/assets/styles.css">
+  <script type="module" src="{{ .Site.BaseURL }}dist/assets/main.js"></script>
 {{- end -}}
 {{- end -}}
