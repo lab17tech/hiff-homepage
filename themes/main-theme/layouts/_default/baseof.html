@@ -15,14 +15,8 @@
     <!-- Custom Fonts -->
     <link rel="stylesheet" href="{{ .Site.BaseURL }}css/fonts.css">
 
-    {{ if hugo.IsServer }}
-    <script type="module" src="http://localhost:3000/@vite/client"></script>
-    <script type="module" src="http://localhost:3000/js/main.js"></script>
-    <link rel="stylesheet" href="http://localhost:3000/scss/main.scss">
-    {{ else }}
-    <link rel="stylesheet" href="{{ .Site.BaseURL }}dist/assets/styles-BIb9PnxO.css">
-    <script type="module" src="{{ .Site.BaseURL }}dist/assets/main-B1rkipsU.js"></script>
-    {{ end }}
+    <!-- Vite Assets -->
+    {{ partial "vite-assets.html" . }}
 </head>
 <body>
     <header>

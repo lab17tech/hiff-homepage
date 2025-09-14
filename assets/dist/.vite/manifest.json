@@ -1,0 +1,13 @@
+{
+  "js/main.js": {
+    "file": "assets/main-blEKk3sK.js",
+    "name": "main",
+    "src": "js/main.js",
+    "isEntry": true
+  },
+  "scss/main.scss": {
+    "file": "assets/styles-lOx5tPYf.css",
+    "src": "scss/main.scss",
+    "isEntry": true
+  }
+}

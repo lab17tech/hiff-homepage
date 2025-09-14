@@ -1,0 +1,19 @@
+{{- if hugo.IsServer -}}
+<!-- Development mode - use Vite dev server -->
+<script type="module" src="http://localhost:3000/@vite/client"></script>
+<script type="module" src="http://localhost:3000/js/main.js"></script>
+<link rel="stylesheet" href="http://localhost:3000/scss/main.scss">
+{{- else -}}
+<!-- Production mode - use Hugo's asset pipeline -->
+{{- $css := resources.Get "scss/main.scss" -}}
+{{- if $css -}}
+  {{- $css = $css | resources.ToCSS | minify | fingerprint -}}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+{{- end -}}
+
+{{- $js := resources.Get "js/main.js" -}}
+{{- if $js -}}
+  {{- $js = $js | minify | fingerprint -}}
+  <script type="module" src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}"></script>
+{{- end -}}
+{{- end -}}

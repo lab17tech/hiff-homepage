@@ -60,9 +60,6 @@ jobs:
         id: pages
         uses: actions/configure-pages@v5
 
-      - name: Build Vite assets
-        run: yarn vite build
-
       - name: Build with Hugo
         env:
           HUGO_ENVIRONMENT: github
