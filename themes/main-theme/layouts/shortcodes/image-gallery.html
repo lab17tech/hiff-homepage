@@ -6,10 +6,10 @@
 <div class="image-gallery">
   <div class="gallery-row">
     <div class="gallery-item">
-      <img src="{{ $img1 }}" alt="{{ $alt1 }}" class="gallery-image" data-full="{{ $img1 }}" />
+      <img src="{{ .Site.BaseURL }}{{ strings.TrimLeft "/" $img1 }}" alt="{{ $alt1 }}" class="gallery-image" data-full="{{ .Site.BaseURL }}{{ strings.TrimLeft "/" $img1 }}" />
     </div>
     <div class="gallery-item">
-      <img src="{{ $img2 }}" alt="{{ $alt2 }}" class="gallery-image" data-full="{{ $img2 }}" />
+      <img src="{{ .Site.BaseURL }}{{ strings.TrimLeft "/" $img2 }}" alt="{{ $alt2 }}" class="gallery-image" data-full="{{ .Site.BaseURL }}{{ strings.TrimLeft "/" $img2 }}" />
     </div>
   </div>
 </div>
