@@ -69,7 +69,7 @@ jobs:
           HUGO_ENV: production
         run: |
           hugo \
-            --baseURL "${{ steps.pages.outputs.base_url }}/" \
+            --baseURL "https://lab17tech.github.io/hiff-homepage/" \
             --gc \
             --minify
 
