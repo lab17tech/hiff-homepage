@@ -1,5 +1,5 @@
 ---
-title: "Banen"
+title: ""
 description: "Baneoversikt og booking for Haugerud IF Fotball"
 ---
 
