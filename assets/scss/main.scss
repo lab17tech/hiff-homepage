@@ -241,7 +241,7 @@ main {
 
     .club-title {
       font-family: $heading-font;
-      font-size: 3.2rem;
+      font-size: 2rem;
       font-weight: bold;
       color: white;
       text-shadow: 2px 2px 6px rgba(38, 51, 135, 0.9),
@@ -255,7 +255,7 @@ main {
       line-height: 1.2;
 
       @media (max-width: 768px) {
-        font-size: 2rem;
+        font-size: 1.6rem;
         margin-bottom: 0.75rem;
         letter-spacing: 1px;
         text-shadow: 1px 1px 4px rgba(38, 51, 135, 0.9),
@@ -267,7 +267,7 @@ main {
       }
 
       @media (min-width: 1024px) {
-        font-size: 4rem;
+        font-size: 2rem;
         margin-bottom: 1.5rem;
         letter-spacing: 3px;
         text-shadow: 3px 3px 8px rgba(38, 51, 135, 0.9),
@@ -390,33 +390,39 @@ main {
   }
 
   @keyframes slowPan1 {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-5%); }
+    0% { transform: translateX(-3%); }
+    50% { transform: translateX(3%); }
+    100% { transform: translateX(-3%); }
   }
 
   @keyframes slowPan2 {
-    0% { transform: translateX(-1%); }
-    100% { transform: translateX(-6%); }
+    0% { transform: translateX(3%); }
+    50% { transform: translateX(-3%); }
+    100% { transform: translateX(3%); }
   }
 
   @keyframes slowPan3 {
     0% { transform: translateX(-2%); }
-    100% { transform: translateX(-7%); }
+    50% { transform: translateX(2%); }
+    100% { transform: translateX(-2%); }
   }
 
   @keyframes slowPan4 {
-    0% { transform: translateX(-3%); }
-    100% { transform: translateX(-8%); }
+    0% { transform: translateX(2%); }
+    50% { transform: translateX(-2%); }
+    100% { transform: translateX(2%); }
   }
 
   @keyframes slowPan5 {
     0% { transform: translateX(-4%); }
-    100% { transform: translateX(-9%); }
+    50% { transform: translateX(4%); }
+    100% { transform: translateX(-4%); }
   }
 
   @keyframes slowPan6 {
-    0% { transform: translateX(-5%); }
-    100% { transform: translateX(-10%); }
+    0% { transform: translateX(4%); }
+    50% { transform: translateX(-4%); }
+    100% { transform: translateX(4%); }
   }
 
   // Mobile adjustments
