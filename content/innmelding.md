@@ -23,7 +23,7 @@ I Haugerud Fotball er vi over 500 medlemmer. De fleste er aktive spillere på la
 - Hvis det ikke kan publiseres bilder av deg/ditt barn, legg igjen en melding i tekstfeltet «Melding til Haugerud IF»
 - Man blir stående som medlem til man selv melder seg ut
 
-## Avgifter 2025
+## Avgifter 2026
 
 Vi legger vekt på å holde lave avgifter slik at alle skal ha råd til å spille hos oss. Alle spillere betaler to avgifter hvert kalenderår:
 
