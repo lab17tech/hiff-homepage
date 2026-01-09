@@ -3,7 +3,6 @@
     "id": "football-council-jan",
     "type": "meeting",
     "title": "Møte fotballrådet",
-    "description": "Møte i fotballrådet",
     "location": "Klubbhuset",
     "recurrence": {
       "pattern": "once",
@@ -34,7 +33,6 @@
     "id": "football-council-mar",
     "type": "meeting",
     "title": "Møte fotballrådet",
-    "description": "Møte i fotballrådet",
     "location": "Klubbhuset",
     "recurrence": {
       "pattern": "once",
@@ -52,7 +50,6 @@
     "id": "registration-senior-youth",
     "type": "notice",
     "title": "Påmeldingsfrist senior- og ungdomsfotballen",
-    "description": "Frist for påmelding til senior- og ungdomsfotball",
     "recurrence": {
       "pattern": "yearly",
       "month": 1,
@@ -64,7 +61,6 @@
     "id": "membership-fee",
     "type": "notice",
     "title": "Betaling medlemskontingent",
-    "description": "Betaling av medlemskontingent for neste sesong",
     "recurrence": {
       "pattern": "yearly",
       "month": 1,
@@ -76,7 +72,6 @@
     "id": "registration-children-league",
     "type": "notice",
     "title": "Påmeldingsfrist barnefotballen seriespill",
-    "description": "Frist for påmelding til barnefotball seriespill",
     "recurrence": {
       "pattern": "yearly",
       "month": 2,
@@ -87,7 +82,7 @@
   {
     "id": "training-times-request",
     "type": "notice",
-    "title": "Ønskede treningstider på Haugerudbanen",
+    "title": "Treningstider på Haugerudbanen",
     "description": "Alle lag må melde inn ønskede treningstider",
     "recurrence": {
       "pattern": "yearly",
@@ -100,7 +95,6 @@
     "id": "football-fee-payment",
     "type": "notice",
     "title": "Betaling fotballavgift",
-    "description": "Betaling av fotballavgift for sesongen",
     "recurrence": {
       "pattern": "yearly",
       "month": 3,
@@ -125,7 +119,6 @@
     "id": "season-start",
     "type": "event",
     "title": "Seriestart",
-    "description": "Fotballsesongen starter",
     "recurrence": {
       "pattern": "yearly",
       "month": 4,
@@ -137,7 +130,6 @@
     "id": "registration-six-year-olds",
     "type": "notice",
     "title": "Påmeldingsfrist seksåringer",
-    "description": "Frist for påmelding av seksåringer",
     "recurrence": {
       "pattern": "yearly",
       "month": 6,
@@ -149,7 +141,6 @@
     "id": "registration-futsal",
     "type": "notice",
     "title": "Påmeldingsfrist futsal",
-    "description": "Frist for påmelding til futsal",
     "recurrence": {
       "pattern": "yearly",
       "month": 8,
@@ -161,7 +152,6 @@
     "id": "first-graders-start",
     "type": "event",
     "title": "Oppstart nye lag førsteklassinger",
-    "description": "Oppstart for nye lag med førsteklassinger",
     "recurrence": {
       "pattern": "yearly",
       "month": 9,
@@ -173,7 +163,6 @@
     "id": "registration-next-season",
     "type": "notice",
     "title": "Påmelding neste sesong - første runde",
-    "description": "Første runde påmelding for neste sesong",
     "recurrence": {
       "pattern": "yearly",
       "month": 12,
