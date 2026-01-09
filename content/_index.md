@@ -5,5 +5,3 @@ draft = false
 +++
 
 Velkommen til Haugerud IF Fotball! Vi er en fotballklubb i Oslo som setter hele nærmiljøet i bevegelse.
-
-Her kan du se bilder fra våre kamper og aktiviteter.

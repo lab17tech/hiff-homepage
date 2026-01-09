@@ -24,20 +24,14 @@
             <div class="header-content">
                 <div class="header-brand">
                     <a href="{{ .Site.BaseURL }}" class="brand-link">
-                        <img src="{{ .Site.BaseURL }}images/logo.png" alt="{{ .Site.Title }} logo" class="logo">
-                        <div class="brand-text">
-                            <h1>Haugerud IF</h1>
-                            <h2>Fotball</h2>
-                            {{ if .Site.Params.tagline }}
-                            <span class="tagline">{{ .Site.Params.tagline }}</span>
-                            {{ end }}
-                        </div>
+                        <img src="{{ .Site.BaseURL }}images/hif-banner.png" alt="{{ .Site.Title }}" class="header-banner">
                     </a>
                 </div>
                 <div class="header-menu">
                     <nav class="header-nav">
-                        <a href="{{ .Site.BaseURL }}lagene">Lagene</a>
-                        <a href="{{ .Site.BaseURL }}banen">Banen</a>
+                        <a href="{{ .Site.BaseURL }}lagene">Fotballagene</a>
+                        <a href="{{ .Site.BaseURL }}banen">Fotballbanen</a>
+                        <a href="{{ .Site.BaseURL }}innmelding" class="nav-cta-button">Bli medlem</a>
                     </nav>
                 </div>
             </div>
@@ -70,37 +64,26 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section footer-left">
-                    <ul class="contact-list">
-                        <li><strong>Klubbhus:</strong> Dr. Dedichens vei 23</li>
-                        <li><strong>Postadresse:</strong> Pb. 44 Haugerud, 0616 Oslo</li>
-                        <li><strong>E-post:</strong> <a href="mailto:fotball@haugerudif.no">fotball@haugerudif.no</a></li>
-                    </ul>
+                <div class="footer-section footer-about">
+                    <h3><a href="https://haugerudif.no" target="_blank" rel="noopener">Haugerud Idrettsforening</a></h3>
+                    <p>Et idrettslag på Haugerud/Trosterud i bydel Alna i Oslo. Stiftet 26. november 1970. Idrettslaget har tilbud innenfor 13 ulike idretter, i tillegg til en rekke ungdomsprosjekter, sosiale aktiviteter og samarbeidstiltak i nærmiljøet.</p>
                 </div>
 
-                <div class="footer-section footer-right">
-                    <div class="social-links">
-                        <a href="https://haugerudif.no" target="_blank" rel="noopener" title="Haugerud IF hjemmeside">
-                            <img src="{{ .Site.BaseURL }}favicon-128x128.png" alt="Haugerud IF" class="social-icon" style="width: 24px; height: 24px;">
-                            <span>haugerudif.no</span>
-                        </a>
-                        <a href="https://www.facebook.com/HaugerudFotball/" target="_blank" rel="noopener" title="Haugerud Fotball på Facebook">
-                            <img src="{{ .Site.BaseURL }}images/facebook-icon.svg" alt="Facebook" class="social-icon">
-                            <span>Haugerud Fotball</span>
-                        </a>
-                        <a href="https://www.facebook.com/haugerudidrettsforening/" target="_blank" rel="noopener" title="Haugerud IF på Facebook">
-                            <img src="{{ .Site.BaseURL }}images/facebook-icon.svg" alt="Facebook" class="social-icon">
-                            <span>Haugerud Idrettsforening</span>
-                        </a>
-                        <a href="https://www.instagram.com/haugerud_if/" target="_blank" rel="noopener" title="Haugerud IF på Instagram">
-                            <img src="{{ .Site.BaseURL }}images/instagram-icon.svg" alt="Instagram" class="social-icon">
-                            <span>@haugerud_if</span>
-                        </a>
-                        <a href="https://twitter.com/HaugerudIF/" target="_blank" rel="noopener" title="Haugerud IF på Twitter/X">
-                            <img src="{{ .Site.BaseURL }}images/twitter-icon.svg" alt="Twitter/X" class="social-icon">
-                            <span>@HaugerudIF</span>
-                        </a>
-                    </div>
+                <div class="footer-section footer-contact">
+                    <img src="{{ .Site.BaseURL }}images/email-icon.svg" alt="Kontakt" class="footer-header-icon">
+                    <p class="contact-item">
+                        <img src="{{ .Site.BaseURL }}images/email-icon.svg" alt="Email" class="contact-icon">
+                        <a href="mailto:fotball@haugerudif.no">fotball@haugerudif.no</a>
+                    </p>
+                    <p class="contact-item">
+                        <img src="{{ .Site.BaseURL }}images/phone-icon.svg" alt="Phone" class="contact-icon">
+                        <a href="tel:98846800">988 46 800</a>
+                    </p>
+                </div>
+
+                <div class="footer-section footer-location">
+                    <img src="{{ .Site.BaseURL }}images/location-icon.svg" alt="Klubbhus" class="footer-header-icon">
+                    <p>Dr. Dedichens vei 23<br>0673 OSLO</p>
                 </div>
             </div>
 
