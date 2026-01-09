@@ -21,7 +21,7 @@
 </div>
 
 <div class="team-list">
-{{ range sort .Site.Params.teams "year" "desc" }}
+{{ range sort .Site.Data.teams "year" "desc" }}
   <div class="team-card accordion"
        data-gender="{{ .gender | default "Menn" }}"
        data-age="{{ .alder | default "ungdom og voksne" }}"

@@ -1,0 +1,758 @@
+[
+  {
+    "name": "J2017",
+    "year": 2017,
+    "description": "",
+    "ageGroup": "Jenter 1. klasse (født 2017)",
+    "gender": "Jenter",
+    "alder": "barn",
+    "lagleder": [
+      {
+        "name": "Saba Rehman",
+        "email": "saba.rehman23@gmail.com",
+        "phone": "46394296"
+      }
+    ],
+    "trenere": [
+      {
+        "name": "Kieran Hill",
+        "email": "HappyHillProjects@gmail.com",
+        "phone": "45511160"
+      },
+      {
+        "name": "Gjevat Hulaj",
+        "email": "xheki.13@hotmail.com",
+        "phone": "93934838"
+      }
+    ],
+    "treningstider": [
+      {
+        "day": "Mandag",
+        "time": "17:00-18:00"
+      }
+    ]
+  },
+  {
+    "name": "G2017",
+    "year": 2017,
+    "description": "",
+    "ageGroup": "Gutter 1. klasse (født 2017)",
+    "gender": "Gutter",
+    "alder": "barn",
+    "lagleder": [
+      {
+        "name": "Saba Rehman",
+        "email": "saba.rehman23@gmail.com",
+        "phone": "46394296"
+      }
+    ],
+    "trenere": [
+      {
+        "name": "Ali Islekcerci",
+        "email": "alcerci@gmail.com",
+        "phone": "47358596"
+      },
+      {
+        "name": "Ahmed Nasir",
+        "email": "ahmed-nasir@live.no",
+        "phone": "45380786"
+      },
+      {
+        "name": "Palani Hemen Gafar",
+        "email": "Hemenpalani2014@hotmail.com",
+        "phone": "94026276"
+      },
+      {
+        "name": "Jawwad Ahmed Khan",
+        "email": "Jawwadsk@gmail.com",
+        "phone": "96741648"
+      }
+    ],
+    "treningstider": [
+      {
+        "day": "Fredag",
+        "time": "17:00-18:30"
+      }
+    ]
+  },
+  {
+    "name": "G2018",
+    "year": 2018,
+    "description": "",
+    "ageGroup": "Gutter og jenter født 2018",
+    "gender": "Gutter",
+    "alder": "barn",
+    "lagleder": [
+      {
+        "name": "Fatma Yenil",
+        "email": "fatmayenil90@hotmail.com",
+        "phone": "47358292"
+      }
+    ],
+    "trenere": [],
+    "treningstider": [
+      {
+        "day": "Fredag",
+        "time": "17:30-19:00"
+      }
+    ]
+  },
+  {
+    "name": "J2016/2015",
+    "year": 2016,
+    "description": "",
+    "ageGroup": "Jenter født 2016",
+    "gender": "Jenter",
+    "alder": "barn",
+    "lagleder": [
+      {
+        "name": "Stine Gundersen",
+        "email": "stine_gundersen@hotmail.com",
+        "phone": "93090978"
+      }
+    ],
+    "trenere": [
+      {
+        "name": "Mikael Fidjeland",
+        "email": "mikael@mikifi.net",
+        "phone": "92066167"
+      },
+      {
+        "name": "Maria Kristiansen",
+        "email": "",
+        "phone": "90985542"
+      }
+    ],
+    "treningstider": [
+      {
+        "day": "Mandag",
+        "time": "17:30-18:30"
+      }
+    ]
+  },
+  {
+    "name": "G2016",
+    "year": 2016,
+    "description": "",
+    "ageGroup": "Gutter født 2016",
+    "gender": "Gutter",
+    "alder": "barn",
+    "lagleder": [
+      {
+        "name": "Rasab Shazad Ahmad",
+        "email": "rahmad1981@hotmail.com",
+        "phone": "98037438"
+      }
+    ],
+    "trenere": [
+      {
+        "name": "Jakob Utgård",
+        "email": "jakobu@jakobu.no",
+        "phone": "91829259"
+      },
+      {
+        "name": "Jeton Troni",
+        "email": "cigo77@gmail.com",
+        "phone": "93890498"
+      }
+    ],
+    "treningstider": [
+      {
+        "day": "Fredag",
+        "time": "17:00-18:30"
+      },
+      {
+        "day": "Søndag",
+        "time": "16:00-17:30"
+      }
+    ]
+  },
+  {
+    "name": "G2015",
+    "year": 2015,
+    "description": "",
+    "ageGroup": "Gutter født 2015",
+    "gender": "Gutter",
+    "alder": "barn",
+    "lagleder": [
+      {
+        "name": "Kristin Vinslid",
+        "email": "kristin.vinslid@gmail.com",
+        "phone": "97733652"
+      }
+    ],
+    "trenere": [
+      {
+        "name": "Farrukh Ahmed",
+        "email": "",
+        "phone": "99509905"
+      },
+      {
+        "name": "Fuad Ahmed Nabi",
+        "email": "fuad@live.no",
+        "phone": "45808094"
+      },
+      {
+        "name": "Bjørn Serkved",
+        "email": "b_serkved@hotmail.com",
+        "phone": "96826864"
+      },
+      {
+        "name": "Elmi Gurbanov",
+        "email": "elmigurbanov@hotmail.com",
+        "phone": "92249252"
+      },
+      {
+        "name": "Evzal Amiti",
+        "email": "evzal-amiti@hotmail.com",
+        "phone": "45885160"
+      }
+    ],
+    "treningstider": [
+      {
+        "day": "Onsdag",
+        "time": "17:30-19:00"
+      },
+      {
+        "day": "Fredag",
+        "time": "17:00-18:30"
+      },
+      {
+        "day": "Søndag",
+        "time": "12:00-13:30"
+      }
+    ]
+  },
+  {
+    "name": "G2014",
+    "year": 2014,
+    "description": "",
+    "ageGroup": "Gutter født 2014",
+    "gender": "Gutter",
+    "alder": "barn",
+    "lagleder": [
+      {
+        "name": "Sead Ismaili",
+        "email": "seadism@hotmail.com",
+        "phone": "90115252"
+      }
+    ],
+    "trenere": [
+      {
+        "name": "Ifzal Bhatti",
+        "email": "ifzalbhatti@yahoo.com",
+        "phone": "45781881"
+      },
+      {
+        "name": "Amara Ben Slimen",
+        "email": "amara.benslimen@gmail.com",
+        "phone": "92879978"
+      },
+      {
+        "name": "Pål Aas",
+        "email": "Paulonoruga@gmail.com",
+        "phone": "98654066"
+      },
+      {
+        "name": "Thomas Eng",
+        "email": "the.privat@yahoo.com",
+        "phone": "48243659"
+      },
+      {
+        "name": "Ehsan Khalil Alzohbi",
+        "email": "alzobiehsan4@gmail.com",
+        "phone": "94072490"
+      }
+    ],
+    "treningstider": [
+      {
+        "day": "Mandag",
+        "time": "18:00-19:30"
+      }
+    ]
+  },
+  {
+    "name": "J2013/2014",
+    "year": 2013,
+    "description": "",
+    "ageGroup": "Jenter i 1. og 2. klasse (6-8 år)",
+    "gender": "Jenter",
+    "alder": "barn",
+    "lagleder": [
+      {
+        "name": "Blen Abraham",
+        "email": "blenmimi@yahoo.com",
+        "phone": "41299665"
+      }
+    ],
+    "trenere": [
+      {
+        "name": "Isse Yusuf Ahmed",
+        "email": "Cismaan12@hotmail.com",
+        "phone": "98831451"
+      },
+      {
+        "name": "Blen Abraham",
+        "email": "blenmimi@yahoo.com",
+        "phone": "41299665"
+      },
+      {
+        "name": "Khader I. Adam",
+        "email": "siemsiemeren@gmail.com",
+        "phone": "41383224"
+      }
+    ],
+    "treningstider": [
+      {
+        "day": "Torsdag",
+        "time": "17:00-18:00"
+      }
+    ]
+  },
+  {
+    "name": "G2013",
+    "year": 2013,
+    "description": "",
+    "ageGroup": "Gutter født 2013",
+    "gender": "Gutter",
+    "alder": "barn",
+    "lagleder": [
+      {
+        "name": "Mustafa Saad Hayd",
+        "email": "Mhayd@live.no",
+        "phone": "48436886"
+      }
+    ],
+    "trenere": [
+      {
+        "name": "Granit Dautaj",
+        "email": "Granit@haugerudif.no",
+        "phone": "97955755"
+      },
+      {
+        "name": "Mustafa Saad Hayd",
+        "email": "Mhayd@live.no",
+        "phone": "48436886"
+      },
+      {
+        "name": "Adriatik Krasniqi",
+        "email": "tikikrasniqi@icloud.com",
+        "phone": "91588231"
+      },
+      {
+        "name": "Kian Lea Heggernes",
+        "email": "kialhegg@gmail.com",
+        "phone": "40072992"
+      },
+      {
+        "name": "Ali Ahmed al-seimary",
+        "email": "ali55alseimary@gmail.com",
+        "phone": "46590510"
+      },
+      {
+        "name": "Daud Saqib",
+        "email": "daud_07@icloud.com",
+        "phone": "45843398"
+      },
+      {
+        "name": "Ryan Soleiman Ali Barrwry",
+        "email": "ryanbarrwry@gmail.com",
+        "phone": "40198399"
+      }
+    ],
+    "treningstider": [
+      {
+        "day": "Tirsdag",
+        "time": "16:30-18:00"
+      },
+      {
+        "day": "Torsdag",
+        "time": "16:30-18:00"
+      },
+      {
+        "day": "Søndag",
+        "time": "13:00-14:30"
+      }
+    ]
+  },
+  {
+    "name": "G2012",
+    "year": 2012,
+    "description": "",
+    "ageGroup": "Gutter født 2012",
+    "gender": "Gutter",
+    "alder": "barn",
+    "lagleder": [
+      {
+        "name": "Trang M. Dyngvold",
+        "email": "trangmd78@hotmail.com",
+        "phone": "97763603"
+      }
+    ],
+    "trenere": [
+      {
+        "name": "Roar Loraas",
+        "email": "roarvl@hotmail.com",
+        "phone": "99630411"
+      },
+      {
+        "name": "Pål Aas",
+        "email": "Paulonoruga@gmail.com",
+        "phone": "98654066"
+      },
+      {
+        "name": "Tor-Arne Pimentel-Eilertsen",
+        "email": "torarne01@icloud.com",
+        "phone": "90515469"
+      },
+      {
+        "name": "Abdilqerim Ibraimi",
+        "email": "avdilcerimibraimi79@hotmail.com",
+        "phone": "90900858"
+      }
+    ],
+    "treningstider": [
+      {
+        "day": "Tirsdag",
+        "time": "16:30-18:00"
+      },
+      {
+        "day": "Torsdag",
+        "time": "16:30-18:00"
+      },
+      {
+        "day": "Fredag",
+        "time": "15:30-17:00"
+      }
+    ]
+  },
+  {
+    "name": "G2011",
+    "year": 2011,
+    "description": "",
+    "ageGroup": "Gutter født 2011",
+    "gender": "Gutter",
+    "alder": "barn",
+    "lagleder": [
+      {
+        "name": "Yahaya Sankarreh",
+        "email": "yahaya12@hotmail.com",
+        "phone": "98135597"
+      }
+    ],
+    "trenere": [
+      {
+        "name": "Ifzal Bhatti",
+        "email": "ifzalbhatti@yahoo.com",
+        "phone": "45781881"
+      }
+    ],
+    "treningstider": [
+      {
+        "day": "Mandag",
+        "time": "16:30-18:00"
+      },
+      {
+        "day": "Onsdag",
+        "time": "16:30-18:00"
+      },
+      {
+        "day": "Fredag",
+        "time": "18:45-20:15"
+      }
+    ]
+  },
+  {
+    "name": "G2010",
+    "year": 2010,
+    "description": "",
+    "ageGroup": "Gutter født 2010",
+    "gender": "Gutter",
+    "alder": "barn",
+    "lagleder": [
+      {
+        "name": "Granit Dautaj",
+        "email": "Dinmaler1@gmail.com",
+        "phone": "97955755"
+      }
+    ],
+    "trenere": [
+      {
+        "name": "Granit Dautaj",
+        "email": "Granit@haugerudif.no",
+        "phone": "97955755"
+      },
+      {
+        "name": "Nathan Kidane",
+        "email": "nathan789578@gmail.com",
+        "phone": "96885766"
+      },
+      {
+        "name": "Youssef Idrissi",
+        "email": "youssefidriss2006@gmail.com",
+        "phone": "46300381"
+      }
+    ],
+    "treningstider": [
+      {
+        "day": "Mandag",
+        "time": "16:30-18:00"
+      },
+      {
+        "day": "Onsdag",
+        "time": "16:30-18:00"
+      },
+      {
+        "day": "Fredag",
+        "time": "18:45-20:15"
+      }
+    ]
+  },
+  {
+    "name": "G2006",
+    "year": 2006,
+    "description": "",
+    "ageGroup": "Gutter født 2006",
+    "gender": "Gutter",
+    "alder": "ungdom og voksne",
+    "lagleder": [
+      {
+        "name": "Kirushaan Balachandran",
+        "email": "Kirushaan26@gmail.com",
+        "phone": "47628582"
+      },
+      {
+        "name": "Joel Tecklzig",
+        "email": "joelberhane42@gmail.com",
+        "phone": "41370695"
+      }
+    ],
+    "trenere": [
+      {
+        "name": "Siem Kidane",
+        "email": "siemsiemeren@gmail.com",
+        "phone": "92504360"
+      },
+      {
+        "name": "Kirushaan Balachandran",
+        "email": "Kirushaan26@gmail.com",
+        "phone": "47628582"
+      }
+    ],
+    "treningstider": [
+      {
+        "day": "Tirsdag",
+        "time": "18:30-20:00"
+      }
+    ]
+  },
+  {
+    "name": "A-lag Senior",
+    "year": 0,
+    "description": "",
+    "ageGroup": "Voksne menn",
+    "gender": "Menn",
+    "alder": "ungdom og voksne",
+    "lagleder": [
+      {
+        "name": "Toril Todal-Støback",
+        "email": "tometost@outlook.com",
+        "phone": "90194978"
+      },
+      {
+        "name": "Murtaza Ali",
+        "email": "Temojin@live.no",
+        "phone": "46432636"
+      },
+      {
+        "name": "Kjetil Støback",
+        "email": "kjetil59@outlook.com",
+        "phone": "97532755"
+      }
+    ],
+    "trenere": [
+      {
+        "name": "Alvaro Torres Arjona",
+        "email": "alvarotorresarjona@gmail.com",
+        "phone": "94345513"
+      },
+      {
+        "name": "Murtaza Ali",
+        "email": "Temojin@live.no",
+        "phone": "46432636"
+      },
+      {
+        "name": "Adil Svendsen Laatyaoui",
+        "email": "Adilsvendsen@gmail.com",
+        "phone": "40462540"
+      }
+    ],
+    "treningstider": [
+      {
+        "day": "Mandag",
+        "time": "19:30-21:00",
+        "location": "Haugerudbanen"
+      },
+      {
+        "day": "Lørdag",
+        "time": "11:00-13:00",
+        "location": "Haugerudbanen"
+      }
+    ]
+  },
+  {
+    "name": "B-lag senior",
+    "year": 0,
+    "description": "",
+    "ageGroup": "Voksne menn",
+    "gender": "Menn",
+    "alder": "ungdom og voksne",
+    "lagleder": [
+      {
+        "name": "Firat Secici",
+        "email": "firatsecici@gmail.com",
+        "phone": "40604023"
+      },
+      {
+        "name": "Kirushaan Balachandran",
+        "email": "Kirushaan26@gmail.com",
+        "phone": "47628582"
+      }
+    ],
+    "trenere": [
+      {
+        "name": "Mikael Kråkenes",
+        "email": "mikael.kraakenes@live.com",
+        "phone": "94971492"
+      },
+      {
+        "name": "Firat Secici",
+        "email": "firatsecici@gmail.com",
+        "phone": "40604023"
+      }
+    ],
+    "treningstider": [
+      {
+        "day": "Mandag",
+        "time": "19:30-21:00",
+        "location": "Haugerudbanen"
+      },
+      {
+        "day": "Lørdag",
+        "time": "11:00-13:00",
+        "location": "Haugerudbanen"
+      }
+    ]
+  },
+  {
+    "name": "Menn 7er 1",
+    "year": 0,
+    "description": "",
+    "ageGroup": "Voksne menn",
+    "gender": "Menn",
+    "alder": "ungdom og voksne",
+    "lagleder": [
+      {
+        "name": "Noman Asghar Ali",
+        "email": "nommi87@hotmail.com",
+        "phone": "40644944"
+      }
+    ],
+    "trenere": [
+      {
+        "name": "Waqas Sarwar",
+        "email": "W.Sarwar@cmcmarkets.com",
+        "phone": "46274646"
+      },
+      {
+        "name": "Asim Ahmad",
+        "email": "asim.ahmad@dnb.no",
+        "phone": "46489917"
+      }
+    ],
+    "treningstider": []
+  },
+  {
+    "name": "Menn 7er 2",
+    "year": 0,
+    "description": "",
+    "ageGroup": "Voksne menn",
+    "gender": "Menn",
+    "alder": "ungdom og voksne",
+    "lagleder": [
+      {
+        "name": "Hassan Bhatti",
+        "email": "bhattihassan226@gmail.com",
+        "phone": "98302970"
+      }
+    ],
+    "trenere": [
+      {
+        "name": "Markus Nyhoff Hagen",
+        "email": "hagen.marko@gmail.com",
+        "phone": "46878887"
+      },
+      {
+        "name": "Adriyan Thavanesan",
+        "email": "Adriyanpriv@gmail.com",
+        "phone": "41286594"
+      },
+      {
+        "name": "Ali Yasin",
+        "email": "ayasin849@gmail.com",
+        "phone": "94822708"
+      }
+    ],
+    "treningstider": []
+  },
+  {
+    "name": "Futsal menn",
+    "year": 0,
+    "description": "",
+    "ageGroup": "Voksne menn",
+    "gender": "Menn",
+    "alder": "ungdom og voksne",
+    "lagleder": [
+      {
+        "name": "Mehdi Raza",
+        "email": "Mehdi0712@outlook.com",
+        "phone": "40089649"
+      }
+    ],
+    "trenere": [
+      {
+        "name": "Mehdi Raza",
+        "email": "Mehdi0712@outlook.com",
+        "phone": "40089649"
+      },
+      {
+        "name": "Sarujan Subramaniam",
+        "email": "Sarujan.subramaniam@outlook.com",
+        "phone": "41271801"
+      }
+    ],
+    "treningstider": []
+  },
+  {
+    "name": "Haugerud-banden",
+    "year": 0,
+    "description": "",
+    "ageGroup": "Spesiallag",
+    "gender": "Menn",
+    "alder": "ungdom og voksne",
+    "lagleder": [
+      {
+        "name": "Frank Hoen",
+        "email": "frankhoen@hotmail.com",
+        "phone": ""
+      }
+    ],
+    "trenere": [],
+    "treningstider": [
+      {
+        "day": "Søndag",
+        "time": "17:00-18:30"
+      }
+    ]
+  }
+]
