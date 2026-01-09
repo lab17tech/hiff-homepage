@@ -1,0 +1,271 @@
+{{- $now := now -}}
+{{- $threeMonthsFromNow := $now.AddDate 0 3 0 -}}
+{{- $upcomingEvents := slice -}}
+
+{{- range .Site.Data.events -}}
+  {{- $event := . -}}
+
+  {{/* Calculate next occurrence based on recurrence pattern */}}
+  {{- if eq .recurrence.pattern "yearly" -}}
+    {{/* Build date for this year */}}
+    {{- $month := int .recurrence.month -}}
+    {{- $day := int .recurrence.day -}}
+    {{- $thisYearDate := printf "%d-%02d-%02d" $now.Year $month $day -}}
+    {{- $eventDate := time $thisYearDate -}}
+
+    {{/* For sorting and display */}}
+    {{- $sortDate := $eventDate -}}
+    {{- $filterDate := $eventDate -}}
+
+    {{/* For month-only granularity, use first day for sorting, last day for filtering */}}
+    {{- if eq $event.dateGranularity "month" -}}
+      {{/* Sort date: first day of month at 00:00:00 */}}
+      {{- $sortDate = time (printf "%s 00:00:00" ($eventDate.Format "2006-01-02")) -}}
+      {{/* Filter date: last day of the month so it's visible all month */}}
+      {{- $nextMonth := $eventDate.AddDate 0 1 0 -}}
+      {{- $lastDayOfMonth := $nextMonth.AddDate 0 0 -1 -}}
+      {{- $filterDate = time (printf "%s 23:59:59" ($lastDayOfMonth.Format "2006-01-02")) -}}
+    {{- end -}}
+
+    {{/* If date has passed, use next year */}}
+    {{- if $filterDate.Before $now -}}
+      {{- $eventDate = $eventDate.AddDate 1 0 0 -}}
+      {{- $sortDate = $eventDate -}}
+      {{- $filterDate = $eventDate -}}
+      {{/* Recalculate dates if month granularity */}}
+      {{- if eq $event.dateGranularity "month" -}}
+        {{- $sortDate = time (printf "%s 00:00:00" ($eventDate.Format "2006-01-02")) -}}
+        {{- $nextMonth := $eventDate.AddDate 0 1 0 -}}
+        {{- $lastDayOfMonth := $nextMonth.AddDate 0 0 -1 -}}
+        {{- $filterDate = time (printf "%s 23:59:59" ($lastDayOfMonth.Format "2006-01-02")) -}}
+      {{- end -}}
+    {{- end -}}
+
+    {{/* Add time if specified (not for month granularity) */}}
+    {{- if and $event.time (ne $event.dateGranularity "month") -}}
+      {{- $hour := int (default 0 $event.time.hour) -}}
+      {{- $minute := int (default 0 $event.time.minute) -}}
+      {{- $sortDate = time (printf "%s %02d:%02d:00" ($sortDate.Format "2006-01-02") $hour $minute) -}}
+      {{- $filterDate = time (printf "%s %02d:%02d:00" ($filterDate.Format "2006-01-02") $hour $minute) -}}
+    {{- end -}}
+
+    {{/* Check if within next 2 months */}}
+    {{- if and ($filterDate.After $now) ($filterDate.Before $threeMonthsFromNow) -}}
+      {{- $upcomingEvents = $upcomingEvents | append (dict "event" $event "date" $sortDate "filterDate" $filterDate) -}}
+    {{- end -}}
+
+  {{- else if eq .recurrence.pattern "monthly" -}}
+    {{/* Calculate next 4 monthly occurrences to cover 3 months */}}
+    {{- $day := int .recurrence.day -}}
+    {{- range seq 0 3 -}}
+      {{- $monthsAhead := . -}}
+      {{- $targetDate := $now.AddDate 0 $monthsAhead 0 -}}
+      {{- $dateStr := printf "%d-%02d-%02d" $targetDate.Year (int $targetDate.Month) $day -}}
+      {{- $eventDate := time $dateStr -}}
+
+      {{- $sortDate := $eventDate -}}
+      {{- $filterDate := $eventDate -}}
+
+      {{- if $event.time -}}
+        {{- $hour := int (default 0 $event.time.hour) -}}
+        {{- $minute := int (default 0 $event.time.minute) -}}
+        {{- $sortDate = time (printf "%s %02d:%02d:00" ($sortDate.Format "2006-01-02") $hour $minute) -}}
+        {{- $filterDate = time (printf "%s %02d:%02d:00" ($filterDate.Format "2006-01-02") $hour $minute) -}}
+      {{- end -}}
+
+      {{- if and ($filterDate.After $now) ($filterDate.Before $threeMonthsFromNow) -}}
+        {{- $upcomingEvents = $upcomingEvents | append (dict "event" $event "date" $sortDate "filterDate" $filterDate) -}}
+      {{- end -}}
+    {{- end -}}
+
+  {{- else if eq .recurrence.pattern "once" -}}
+    {{/* One-time event with specific date */}}
+    {{- $year := int .recurrence.year -}}
+    {{- $month := int .recurrence.month -}}
+    {{- $day := int .recurrence.day -}}
+    {{- $dateStr := printf "%d-%02d-%02d" $year $month $day -}}
+    {{- $eventDate := time $dateStr -}}
+
+    {{- $sortDate := $eventDate -}}
+    {{- $filterDate := $eventDate -}}
+
+    {{/* For month-only granularity, use first day for sorting, last day for filtering */}}
+    {{- if eq $event.dateGranularity "month" -}}
+      {{- $sortDate = time (printf "%s 00:00:00" ($eventDate.Format "2006-01-02")) -}}
+      {{- $nextMonth := $eventDate.AddDate 0 1 0 -}}
+      {{- $lastDayOfMonth := $nextMonth.AddDate 0 0 -1 -}}
+      {{- $filterDate = time (printf "%s 23:59:59" ($lastDayOfMonth.Format "2006-01-02")) -}}
+    {{- end -}}
+
+    {{/* Add time if specified (not for month granularity) */}}
+    {{- if and $event.time (ne $event.dateGranularity "month") -}}
+      {{- $hour := int (default 0 $event.time.hour) -}}
+      {{- $minute := int (default 0 $event.time.minute) -}}
+      {{- $sortDate = time (printf "%s %02d:%02d:00" ($sortDate.Format "2006-01-02") $hour $minute) -}}
+      {{- $filterDate = time (printf "%s %02d:%02d:00" ($filterDate.Format "2006-01-02") $hour $minute) -}}
+    {{- end -}}
+
+    {{/* Check if within next 2 months */}}
+    {{- if and ($filterDate.After $now) ($filterDate.Before $threeMonthsFromNow) -}}
+      {{- $upcomingEvents = $upcomingEvents | append (dict "event" $event "date" $sortDate "filterDate" $filterDate) -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{/* Sort by date */}}
+{{- $sortedEvents := sort $upcomingEvents "date" "asc" -}}
+
+<div class="events-container">
+  <div class="events-list">
+    {{- if eq (len $sortedEvents) 0 -}}
+      <p class="no-events">Ingen kommende hendelser i de neste tre månedene</p>
+    {{- else -}}
+      {{- range $sortedEvents -}}
+        {{- $event := .event -}}
+        {{- $date := .date -}}
+
+        {{/* Format date based on granularity */}}
+        {{- $formattedDate := "" -}}
+        {{- if eq $event.dateGranularity "full" -}}
+          {{- $formattedDate = printf "%d. %s %d kl. %02d:%02d" $date.Day (index (slice "januar" "februar" "mars" "april" "mai" "juni" "juli" "august" "september" "oktober" "november" "desember") (sub (int $date.Month) 1)) $date.Year $date.Hour $date.Minute -}}
+        {{- else if eq $event.dateGranularity "date" -}}
+          {{- $formattedDate = printf "%d. %s %d" $date.Day (index (slice "januar" "februar" "mars" "april" "mai" "juni" "juli" "august" "september" "oktober" "november" "desember") (sub (int $date.Month) 1)) $date.Year -}}
+        {{- else if eq $event.dateGranularity "month" -}}
+          {{- $formattedDate = printf "%s %d" (index (slice "Januar" "Februar" "Mars" "April" "Mai" "Juni" "Juli" "August" "September" "Oktober" "November" "Desember") (sub (int $date.Month) 1)) $date.Year -}}
+        {{- end -}}
+
+        <div class="event-card event-type-{{ $event.type }}">
+          <div class="event-header">
+            <span class="event-date">{{ $formattedDate }}</span>
+          </div>
+          <div class="event-body">
+            <div class="event-title">{{ $event.title }}</div>
+            <div class="event-description">{{ $event.description }}</div>
+            {{- if $event.location -}}
+              <div class="event-location">
+                <svg class="location-icon" xmlns="http://www.w3.org/2000/svg" height="12" width="9" viewBox="0 0 384 512">
+                  <path fill="currentColor" d="M339.8 282c-17.5 34.2-40.9 70-64.7 102.6c-23.7 32.6-47.4 61.8-65.3 82.8c-7 8.2-13 15.2-17.8 20.6c-4.8-5.4-10.8-12.4-17.8-20.6c-17.8-21-41.6-50.2-65.3-82.8C85.2 351.9 61.7 316.2 44.2 282C26.6 247.3 16 216.1 16 192C16 94.8 94.8 16 192 16s176 78.8 176 176c0 24.1-10.6 55.3-28.2 90zM202.7 500C243.2 454.2 384 287.9 384 192C384 86 298 0 192 0S0 86 0 192c0 95.9 140.8 262.2 181.3 308c6.8 7.7 10.7 12 10.7 12s4-4.3 10.7-12z"/>
+                </svg>
+                {{ $event.location }}
+              </div>
+            {{- end -}}
+            {{- if $event.link -}}
+              <a href="{{ $event.link }}" class="event-link">Les mer →</a>
+            {{- end -}}
+          </div>
+        </div>
+      {{- end -}}
+    {{- end -}}
+  </div>
+</div>
+
+<style>
+.events-container {
+  margin-top: 2rem;
+}
+
+.events-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.no-events {
+  padding: 1.5rem 0;
+  color: #666;
+  font-style: italic;
+  font-size: 0.95rem;
+}
+
+.event-card {
+  display: flex;
+  gap: 1.5rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.event-card:last-child {
+  border-bottom: none;
+}
+
+.event-header {
+  flex-shrink: 0;
+  width: 180px;
+}
+
+.event-date {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.4;
+}
+
+.event-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.event-title {
+  font-weight: 600;
+  font-size: 1rem;
+  color: rgb(55, 56, 150);
+  margin-bottom: 0.15rem;
+}
+
+.event-description {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.4;
+  margin-bottom: 0.15rem;
+}
+
+.event-location {
+  color: #888;
+  font-size: 0.85rem;
+  margin-top: 0.15rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.location-icon {
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+
+.event-link {
+  display: inline-block;
+  color: rgb(55, 56, 150);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin-top: 0.15rem;
+}
+
+.event-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .event-card {
+    gap: 1rem;
+  }
+
+  .event-header {
+    width: 140px;
+  }
+
+  .event-date {
+    font-size: 0.85rem;
+  }
+
+  .event-title {
+    font-size: 0.95rem;
+  }
+
+  .event-description {
+    font-size: 0.85rem;
+  }
+}
+</style>

@@ -1,0 +1,184 @@
+[
+  {
+    "id": "football-council-jan",
+    "type": "meeting",
+    "title": "Møte fotballrådet",
+    "description": "Møte i fotballrådet",
+    "location": "Klubbhuset",
+    "recurrence": {
+      "pattern": "once",
+      "year": 2026,
+      "month": 1,
+      "day": 13
+    },
+    "time": {
+      "hour": 18,
+      "minute": 30
+    },
+    "dateGranularity": "full"
+  },
+  {
+    "id": "trainer-forum-feb",
+    "type": "meeting",
+    "title": "Trenerforum",
+    "description": "Trenerforum for alle trenere",
+    "recurrence": {
+      "pattern": "once",
+      "year": 2026,
+      "month": 2,
+      "day": 6
+    },
+    "dateGranularity": "date"
+  },
+  {
+    "id": "football-council-mar",
+    "type": "meeting",
+    "title": "Møte fotballrådet",
+    "description": "Møte i fotballrådet",
+    "location": "Klubbhuset",
+    "recurrence": {
+      "pattern": "once",
+      "year": 2026,
+      "month": 3,
+      "day": 4
+    },
+    "time": {
+      "hour": 18,
+      "minute": 30
+    },
+    "dateGranularity": "full"
+  },
+  {
+    "id": "registration-senior-youth",
+    "type": "notice",
+    "title": "Påmeldingsfrist senior- og ungdomsfotballen",
+    "description": "Frist for påmelding til senior- og ungdomsfotball",
+    "recurrence": {
+      "pattern": "yearly",
+      "month": 1,
+      "day": 12
+    },
+    "dateGranularity": "date"
+  },
+  {
+    "id": "membership-fee",
+    "type": "notice",
+    "title": "Betaling medlemskontingent",
+    "description": "Betaling av medlemskontingent for neste sesong",
+    "recurrence": {
+      "pattern": "yearly",
+      "month": 1,
+      "day": 1
+    },
+    "dateGranularity": "month"
+  },
+  {
+    "id": "registration-children-league",
+    "type": "notice",
+    "title": "Påmeldingsfrist barnefotballen seriespill",
+    "description": "Frist for påmelding til barnefotball seriespill",
+    "recurrence": {
+      "pattern": "yearly",
+      "month": 2,
+      "day": 2
+    },
+    "dateGranularity": "date"
+  },
+  {
+    "id": "training-times-request",
+    "type": "notice",
+    "title": "Ønskede treningstider på Haugerudbanen",
+    "description": "Alle lag må melde inn ønskede treningstider",
+    "recurrence": {
+      "pattern": "yearly",
+      "month": 2,
+      "day": 1
+    },
+    "dateGranularity": "month"
+  },
+  {
+    "id": "football-fee-payment",
+    "type": "notice",
+    "title": "Betaling fotballavgift",
+    "description": "Betaling av fotballavgift for sesongen",
+    "recurrence": {
+      "pattern": "yearly",
+      "month": 3,
+      "day": 1
+    },
+    "dateGranularity": "month"
+  },
+  {
+    "id": "spring-dugnad",
+    "type": "task",
+    "title": "Vårdugnad Haugerudbanen",
+    "description": "Fellesdugnadsdag for klargjøring av banen til ny sesong",
+    "location": "Haugerudbanen",
+    "recurrence": {
+      "pattern": "yearly",
+      "month": 4,
+      "day": 1
+    },
+    "dateGranularity": "month"
+  },
+  {
+    "id": "season-start",
+    "type": "event",
+    "title": "Seriestart",
+    "description": "Fotballsesongen starter",
+    "recurrence": {
+      "pattern": "yearly",
+      "month": 4,
+      "day": 1
+    },
+    "dateGranularity": "month"
+  },
+  {
+    "id": "registration-six-year-olds",
+    "type": "notice",
+    "title": "Påmeldingsfrist seksåringer",
+    "description": "Frist for påmelding av seksåringer",
+    "recurrence": {
+      "pattern": "yearly",
+      "month": 6,
+      "day": 1
+    },
+    "dateGranularity": "date"
+  },
+  {
+    "id": "registration-futsal",
+    "type": "notice",
+    "title": "Påmeldingsfrist futsal",
+    "description": "Frist for påmelding til futsal",
+    "recurrence": {
+      "pattern": "yearly",
+      "month": 8,
+      "day": 3
+    },
+    "dateGranularity": "date"
+  },
+  {
+    "id": "first-graders-start",
+    "type": "event",
+    "title": "Oppstart nye lag førsteklassinger",
+    "description": "Oppstart for nye lag med førsteklassinger",
+    "recurrence": {
+      "pattern": "yearly",
+      "month": 9,
+      "day": 1
+    },
+    "dateGranularity": "month"
+  },
+  {
+    "id": "registration-next-season",
+    "type": "notice",
+    "title": "Påmelding neste sesong - første runde",
+    "description": "Første runde påmelding for neste sesong",
+    "recurrence": {
+      "pattern": "yearly",
+      "month": 12,
+      "day": 1
+    },
+    "dateGranularity": "date"
+  }
+]

@@ -523,6 +523,15 @@ table {
   }
 }
 
+// Events section styling
+.events-section {
+  padding: 4rem 0;
+  background: #f8f9fa;
+
+  @media (max-width: 768px) {
+    padding: 3rem 0;
+  }
+}
 
 // Page content styling
 main {
